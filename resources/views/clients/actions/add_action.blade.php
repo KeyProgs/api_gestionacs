@@ -1,76 +1,104 @@
-@extends('adminlte::page')
 
-@section('title', 'AdminLTE')
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
 
-@section('content_header')
-    <h1 class="m-0 text-dark">Actions Liste</h1>
-@stop
+            <form action="/addaction" METHOD="POST">
+                @csrf
 
 
-@section('content')
-
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <p class="mb-0"><h1>Liste Des Tâches</h1>
-
-                    <table class="table table-hover">
-                        <thead  class="thead-light ">
-                        <tr>
-                            <th  scope="col" >#</th>
-                            <th  scope="col" >Titre</th>
-                            <th  scope="col" >Date début</th>
-                            <th  scope="col" >date Fin</th>
-                            <th  scope="col" >Rapporteur</th>
-                            <th  scope="col" >Action Type</th>
-                            <th  scope="col" >Etat</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        @foreach($actions as $action)
-                            <tr  style='cursor: pointer; cursor: hand;' onclick="window.location='/client/c-{{$action['id']}}';" >
-                                <th scope="row">{{$action['id']}}</th>
-                                <td>{{$action['titre']}}</td>
-                                <td>{{$action['dd']}}</td>
-                                <td>{{$action['df']}}</td>
-                                <td>{{$action->getRapporteur->name}}</td>
-                                <td>{{$action->typeaction->titre}}</td>
-                                <td>{{$action->getActionEtat->titre}}</td>
-                            </tr>
-                        @endforeach
-
-                        </tbody>
-                    </table>
-                    <span>
-                        {{$actions->appends(array('sort' => 'votes'))->links()}}
-                    </span>
-
-                    </p>
-                    <div class="col-3 mt-1">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
-                            + Action
-                        </button>
-                    </div>
-                </div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Ajouter Actions à faire</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Actions</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Retours</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">En traitement</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+
+                            <table class="row  form-row col-md-12">
+                                <tr>
+                                    <td colspan="2">Action</td>
+                                    <td>
+                                        <select id="id_action_type" name="id_action_type" class=" form-control form-control-sm"
+                                                onchange="changeStatus({{$action['id']}},this.value)" >
+                                            @foreach($action_types as $action_type)
+                                                <option  value="{{$action_type->id}}">{{$action_type->id}} {{$action_type->titre}}</option>
+                                            @endforeach
+                                        </select>                                    </td>
+                                </tr>
+                                <tr>
+
+                                    <td colspan="2">Titre</td>
+                                    <td>
+                                        <input class=" form-control form-control-sm" type="text" name="titre" id="titre" placeholder="Titre d'actions"  >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Date début</td>
+                                    <td>
+                                        <input class=" form-control form-control-sm" type="date" name="dd" id="dd" placeholder="Titre d'actions" value="{{date('Y-m-d')}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Date fin</td>
+                                    <td>
+                                        <input class=" form-control form-control-sm" type="date" name="df" id="df" placeholder="Titre d'actions"  value="{{date('Y-m-d')}}">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Résponsable</td>
+                                    <td>
+                                        <select class=" form-control form-control-sm" type="text" id="responsable" name="responsable">
+                                            @foreach($users as $user)
+                                                <option id="{{$user->id}}">{{$user->id }} {{$user->name  }}</option>
+                                            @endforeach
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Déscription</td>
+                                    <td>
+                                        <textarea name="description" id="description" class=" form-control form-control-sm" ></textarea>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+
+
+                    </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    okk
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="profile-tab">
+                    okkkk
+                    </div>
+
+
+
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success" >Ajouter</button>
+            </div>
+            </form>
         </div>
     </div>
-    <style>
-        .w-5{
-            display: none;
-        }
-    </style>
-
-@stop
-
-<script>
-    jQuery( document ).ready(function() {
-        $("#container").on('click-row.bs.table', function (e, row, $element) {
-            window.location = $element.data('href');
-        });
-    });
-
-
-</script>
+</div>

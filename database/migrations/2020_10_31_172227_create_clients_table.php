@@ -19,13 +19,13 @@ class CreateClientsTable extends Migration
             $table->char('prenom', 40);
             $table->char('cp', 10);
             $table->date('dn');
-            $table->char('ville', 40);
-            $table->char('activite', 40);
+            $table->char('ville', 40)->nullable();
+            $table->char('activite', 40)->nullable();
             $table->char('email', 40);
-            $table->char('portable', 10);
+            $table->char('portable', 10)->nullable();
             $table->char('fixe', 10)->nullable();
-            $table->char('indicatif', 5);
-            $table->char('adresse', 40);
+            $table->char('indicatif', 5)->nullable();
+            $table->char('adresse', 40)->nullable();
             $table->timestamps();
         });
     }

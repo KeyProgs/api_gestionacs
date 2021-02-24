@@ -23,6 +23,7 @@
                                <th  scope="col" >Email</th>
                                <th  scope="col" >Cp</th>
                                <th  scope="col" >Date Naissance</th>
+                               <th  scope="col" >Utilisateur</th>
                            </tr>
                         </thead>
                          <tbody>
@@ -35,6 +36,7 @@
                                      <td>{{$client['email']}}</td>
                                      <td>{{$client['cp']}}</td>
                                      <td>{{$client['dn']}}</td>
+                                     <td>{{$client->user->name}}</td>
                                  </tr>
                                  @endforeach
 

@@ -9,13 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
     {{-- Custom Meta Tags --}}
     @yield('meta_tags')
 
     {{-- Title --}}
     <title>
-        @yield('title_prefix', config('adminlte.title_prefix', ''))
-        @yield('title', config('adminlte.title', 'API ACSgestion'))
+        @yield('title_prefix', config('adminlte.title_prefix', ''))...
+        @yield('title_', config('adminlte.title_', ''))
         @yield('title_postfix', config('adminlte.title_postfix', ''))
     </title>
 
@@ -73,14 +78,72 @@
         <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     @endif
 
+
+<!-- Smartsupp Live Chat script -->
+    <script type="text/javascript">
+        var _smartsupp = _smartsupp || {};
+        _smartsupp.key = 'cc2c19531e437ac72b9b0a0027c35702488d5873';
+        window.smartsupp||(function(d) {
+            var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+            s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+            c.type='text/javascript';c.charset='utf-8';c.async=true;
+            c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+        })(document);
+    </script>
+
+
 </head>
 
+
 <body class="@yield('classes_body')" @yield('body_data')>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    function geoloc(){ // ou tout autre nom de fonction
+
+        userlat = "startPos.coords.latitude";
+        userlon = "startPos.coords.longitude";
+
+        var geoSuccess = function(position) { // Ceci s'exécutera si l'utilisateur accepte la géolocalisation
+            startPos = position;
+            userlat = startPos.coords.latitude;
+            userlon = startPos.coords.longitude;
+            console.log("lat: "+userlat+" - lon: "+userlon);
+            $.ajax({
+                url:'https://www.nenidrahe.cz/index2.php',
+                type: 'GET',
+                data: "lat="+userlat+"&lon="+userlon
+            }).done(function(reponse){
+                // var points = JSON.parse(reponse);
+                console.log(reponse);
+                // Ici nous traitons les différents points
+            }).fail (function(error){
+                console.log(error);
+            });
+
+
+        };
+        var geoFail = function(){ // Ceci s'exécutera si l'utilisateur refuse la géolocalisation
+            console.log("refus");
+        };
+        // La ligne ci-dessous cherche la position de l'utilisateur et déclenchera la demande d'accord
+        navigator.geolocation.getCurrentPosition(geoSuccess,geoFail);
+
+
+
+
+
+    }
+    console.log("....................." + geoloc());
+</script>
 
     {{-- Body Content --}}
     @yield('body')
 
+
     {{-- Base Scripts --}}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
     @if(!config('adminlte.enabled_laravel_mix'))
         <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -105,6 +168,12 @@
 
     {{-- Custom Scripts --}}
     @yield('adminlte_js')
+
+
+
+
+
+
 
 </body>
 

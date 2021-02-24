@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$USER_HOME$/AppData/Local/Google/Chrome/User Data/Profile 1/Extensions/hmanipjnbjnhoicdnooapcnfonebefel/3.28.3_0/.idea/3.28.3_0.iml" filepath="$USER_HOME$/AppData/Local/Google/Chrome/User Data/Profile 1/Extensions/hmanipjnbjnhoicdnooapcnfonebefel/3.28.3_0/.idea/3.28.3_0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Ecom/Ecom_v1/.idea/Ecom_v1.iml" filepath="$PROJECT_DIR$/../Ecom/Ecom_v1/.idea/Ecom_v1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/api_gestionacs_v3.iml" filepath="$PROJECT_DIR$/.idea/api_gestionacs_v3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../acs/cgm.gestionacs.com/cgm.gestionacs.com/.idea/cgm.gestionacs.com.iml" filepath="$PROJECT_DIR$/../../acs/cgm.gestionacs.com/cgm.gestionacs.com/.idea/cgm.gestionacs.com.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../extension_tarif/.idea/extension_tarif.iml" filepath="$PROJECT_DIR$/../extension_tarif/.idea/extension_tarif.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../React/gestionacs_react/.idea/gestionacs_react.iml" filepath="$PROJECT_DIR$/../React/gestionacs_react/.idea/gestionacs_react.iml" />
     </modules>
   </component>
 </project>

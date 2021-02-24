@@ -9,7 +9,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Ajouter Infraction</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -33,13 +33,15 @@
                                 <option value="6" >  Vandalisme</option>
                                 <option value="7" >  Evenements natuels</option>
                                 <option value="8" >  Matériel</option>
-                                <option value="9" >  Corporel</option>
+                                <option value="9" >Corporel</option>
 
                             </select>
                             <div class="invalid-tooltip">
                                 Merci de sélectionner un choix valide...
                             </div>
                         </div>
+
+
 
                         <div class="col-md-4 mb-3">
                             <label for="station_id">Résponsabilité</label>

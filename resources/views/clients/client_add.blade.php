@@ -4,7 +4,7 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1 class="m-0 text-dark">Dashboard.</h1>
+    <h1 class="m-0 text-dark">Dashboard : Ajouter Client</h1>
 @stop
 
 @section('content')
@@ -117,7 +117,7 @@
                         <option value="6"  @if($client['activite_id']==6) selected @endif>  Retraité</option>
                     </select>
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -131,7 +131,7 @@
                         <option value="6"  @if($voiture['sitfam_id']==6) selected @endif>Divorcé</option>
                     </select>
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                 </div>
 
@@ -149,7 +149,7 @@
                         <option value="8"  @if($voiture['titulairecartegrise']==8) selected @endif>  Enfant</option>
                     </select>
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -161,7 +161,7 @@
                         <option value="4"  @if($voiture['typepermis']==4) selected @endif>  Permis Etranger hors UE</option>
                     </select>
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                 </div>
 
@@ -200,7 +200,7 @@
                         <option value="4"  @if($voiture['usage_id']==4) selected @endif>  Tous déplacements</option>
                     </select>
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                 </div>
 
@@ -213,7 +213,7 @@
                         <option value="4"  @if($voiture['financement_id']==4) selected @endif>  Donation</option>
                     </select>
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                 </div>
 
@@ -228,7 +228,7 @@
                     <input value="{{$voiture['station_ville_j']}}" type="text" class="form-control col-md-3" name="station_ville_j" id="station_ville_j" placeholder="ville travail">
 
                     <div class="invalid-tooltip">
-                        Please select a valid state.
+                        Merci de sélectionner un choix valide...
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="station_id">Stationnement du véhicule</label>
@@ -241,7 +241,7 @@
                             <option value="6"  @if($voiture['station_id']==6) selected @endif>  Garage public surveillé</option>
                         </select>
                         <div class="invalid-tooltip">
-                            Please select a valid state.
+                            Merci de sélectionner un choix valide...
                         </div>
                     </div>
 
@@ -255,7 +255,7 @@
                         <input value="{{$voiture['etat_assurance']==null ? -1 : $voiture['etat_assurance']}}"  type="number" class="form-control" name="etat_assurance"  id="etat_assurance" placeholder="Km Range start"> Km
 
                         <div class="invalid-tooltip">
-                            Please select a valid state.
+                            Merci de sélectionner un choix valide...
                         </div>
                     </div>
 
@@ -266,7 +266,7 @@
                         <input min="0" value="{{$voiture['last3y_assure']==null ? -1 : $voiture['last3y_assure']}}"  type="number" class="form-control" name="last3y_assure"  id="last3y_assure" placeholder="Km Range start">
 
                         <div class="invalid-tooltip">
-                            Please select a valid state.
+                            Merci de sélectionner un choix valide...
                         </div>
                     </div>
 
@@ -275,7 +275,7 @@
                         <input max="0" value="{{$voiture['last3y_interruption']==null ? -1 : $voiture['last3y_interruption']}}"  type="number" class="form-control" name="last3y_interruption"  id="last3y_interruption" placeholder="Interruption 3 derniere années ">
 
                         <div class="invalid-tooltip">
-                            Please select a valid state.
+                            Merci de sélectionner un choix valide...
                         </div>
                     </div>
 
@@ -297,7 +297,7 @@
                             <option value="13"  @if($voiture['assureur_resiliation']==13) selected @endif> Sinistre et conduite sous l’emprise de stupéfiant </option>
                         </select>
                         <div class="invalid-tooltip">
-                            Please select a valid state.
+                            Merci de sélectionner un choix valide...
                         </div>
                     </div>
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="api_acs_v3@localhost" uuid="14613faf-2a88-4a4c-961a-a0493ae531d9">
-      <driver-ref>mysql.8</driver-ref>
+    <data-source source="LOCAL" name="api_acs_v3@localhost" uuid="1173b617-e1ec-4e93-9a71-eace705377ec">
+      <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/api_acs_v3</jdbc-url>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://localhost:3306/api_acs_v3</jdbc-url>
     </data-source>
   </component>
 </project>

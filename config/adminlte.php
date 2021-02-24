@@ -15,6 +15,7 @@ return [
     */
 
     'title' => 'ACS GESTION V3',
+    'title_' => 'ACS GESTION V3',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -242,10 +243,10 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
+            'text'        => 'Notifications',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label'       => 5,
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
@@ -255,17 +256,12 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'dashboard',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Stats',
-                    'url'  => '#',
+                    'text' => 'Taches',
+                    'url'  => '/taches',
                 ],
                 [
                     'text' => 'clientsgestion',
@@ -298,6 +294,10 @@ return [
                 [
                     'text' => 'level_one',
                     'url'  => '#',
+                    'submenu' => [
+                        'text' => 'change_password',
+                        'url'  => 'dashboard',
+                    ]
                 ],
             ],
         ],
@@ -315,7 +315,7 @@ return [
         [
             'text'       => 'information',
             'icon_color' => 'cyan',
-            'url'        => '#',
+
         ],
     ],
 

@@ -11,4 +11,8 @@ class Client extends Model
     protected $guarded = [];
 
     use HasFactory;
+
+    function user(){
+        return $this->belongsTo(User::class);
+    }
 }

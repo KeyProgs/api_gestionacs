@@ -29,15 +29,32 @@ Route::match(array('GET', 'POST'),'/client/add/', [\App\Http\Controllers\ClientC
 Route::post('/client/edit/{id}', [\App\Http\Controllers\ClientController::class , 'edit_client']);
 
 Route::get('/client/sinistre/delete/{id}', [\App\Http\Controllers\ClientController::class , 'deleteSinistre']);
+Route::get('/client/sanction/delete/{id}', [\App\Http\Controllers\ClientController::class , 'deleteSanction']);
 
 
 
 Route::post('clients/voitures/sinistres/add', [\App\Http\Controllers\ClientController::class , 'sinistresAdd']);
+Route::post('clients/voitures/sanctions/add', [\App\Http\Controllers\ClientController::class , 'sanctionsAdd']);
+
+
+//taches Actions
+Route::get('/taches', [\App\Http\Controllers\ClientController::class , 'taches']);
+Route::post('/addaction', [\App\Http\Controllers\ClientController::class , 'addAction']);
+Route::post('/change_action_etat', [\App\Http\Controllers\ClientController::class , 'changeActionEtat']);
+Route::get('/change_action_etat', [\App\Http\Controllers\ClientController::class , 'changeActionEtat']);
+Route::post('/change_reponsable', [\App\Http\Controllers\ClientController::class , 'changeReponsable']);
+
+//Client File.
+Route::post('file/upload', 'FileController@store')->name('file.upload');
+Route::post('upload', 'FileController@upload')->name('upload');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return view('dashboard');
     return redirect('/clientslist');
 })->name('dashboard');
+
+
+
 
 
