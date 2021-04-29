@@ -45,6 +45,7 @@ Route::get('/change_action_etat', [\App\Http\Controllers\ClientController::class
 Route::post('/change_reponsable', [\App\Http\Controllers\ClientController::class , 'changeReponsable']);
 
 //Client File.
+Route::get('/upload', 'HomeController@index')->name('home');
 Route::post('file/upload', 'FileController@store')->name('file.upload');
 Route::post('upload', 'FileController@upload')->name('upload');
 

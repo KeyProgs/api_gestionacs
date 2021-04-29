@@ -14,8 +14,13 @@ class AssuranceController extends Controller
      */
     public function index()
     {
-        //
+
+
+
     }
+//DE531001100126236834-DE53100110012623683475
+//NTSBDEB1XXX
+//FR7610278089910002074570167-CMCIFR2A
 
     /**
      * Show the form for creating a new resource.
@@ -32,6 +37,7 @@ class AssuranceController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     *
      */
     public function store(Request $request)
     {

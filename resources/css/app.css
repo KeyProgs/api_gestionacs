@@ -5,16 +5,20 @@
 
 
 
-/*@import url('https://fonts.googleapis.com/css?family=Nunito');*/
+/*//app.scss*/
+
+/*// Fonts*/
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 /*// Variables*/
-/*@import 'variables';*/
+@import 'variables';
+/*5137420089093566-0603056*/
 
 /*// Bootstrap*/
-/*@import '~bootstrap/scss/bootstrap';*/
+@import '~bootstrap/scss/bootstrap';
 
-/*// Dropzone*/
-/*@import '~dropzone/dist/min/dropzone.min.css';*/
+/*N*/
+@import '~dropzone/dist/min/dropzone.min.css';
 
 .dropzone {
     margin-bottom: 20px;

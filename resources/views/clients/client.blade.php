@@ -83,7 +83,7 @@
 
                                 <div class="col-md-6">
                                     <label for="nom">Nom</label>
-                                    <input required type="text" class=" form-control form-control-sm" name="nom"
+                                    <input required type="date" class=" form-control form-control-sm" name="nom"
                                            id="nom"
                                            value="{{$client['nom']}}">
                                 </div>
