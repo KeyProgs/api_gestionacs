@@ -1,9 +1,9 @@
 @extends('adminlte::master')
 
-@inject('layoutHelper', \JeroenNoten\LaravelAdminLte\Helpers\LayoutHelper)
+@inject('layoutHelper', \JeroenNoten\LaravelAdminLte\Helpers\LayoutHelper::class)
 
 @if($layoutHelper->isLayoutTopnavEnabled())
-    @php( $def_container_class = 'container' )
+@php( $def_container_class = 'container' )
 @else
     @php( $def_container_class = 'container-fluid' )
 @endif

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="36ef9ec4-60af-4cc5-b922-15c0bcf85d30" name="acrm@acrm.gestionacs.com" url="http://ftp.gestionacs.com">
-        <fileTransfer host="ftp.gestionacs.com" port="21">
+      <webServer id="133b7bfb-9ae2-4bf3-b3c4-e33f76c77e8d" name="api_gestionacs" url="http://ftp.acsassurance.com">
+        <fileTransfer host="ftp.acsassurance.com" port="21">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

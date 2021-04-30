@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="acrm@acrm.gestionacs.com" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="acrm@acrm.gestionacs.com">
+      <paths name="api_gestionacs">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$USER_HOME$/AppData/Local/Google/Chrome/User Data/Profile 1/Extensions/hmanipjnbjnhoicdnooapcnfonebefel/3.28.3_0" web="/" />
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
