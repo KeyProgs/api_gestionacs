@@ -42,11 +42,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanction_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanction_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanctions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanctions.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xs.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/menu-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/menu-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" afterDir="false" />
@@ -276,7 +278,7 @@
       <workItem from="1617373874322" duration="2389000" />
       <workItem from="1617720342480" duration="8520000" />
       <workItem from="1619620326423" duration="4728000" />
-      <workItem from="1619701789220" duration="9205000" />
+      <workItem from="1619701789220" duration="14526000" />
     </task>
     <servers />
   </component>
@@ -296,10 +298,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2472" y="205" key="#Deployment" timestamp="1619785007253">
+    <state x="2472" y="205" key="#Deployment" timestamp="1619796964229">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="205" key="#Deployment/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619785007253" />
+    <state x="2472" y="205" key="#Deployment/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619796964229" />
     <state x="2557" y="220" key="#Options" timestamp="1613732264804">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -360,15 +362,15 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612365191683" />
-    <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619704326804">
+    <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619797342444">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619704326804" />
+    <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797342444" />
     <state x="2486" y="149" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612180028068" />
-    <state x="2739" y="134" width="843" height="832" key="find.popup" timestamp="1619781774861">
+    <state x="2739" y="134" width="843" height="832" key="find.popup" timestamp="1619797347766">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2739" y="134" width="843" height="832" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619781774861" />
+    <state x="2739" y="134" width="843" height="832" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797347766" />
     <state x="2918" y="239" width="843" height="801" key="find.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612193578292" />
     <state x="2779" y="279" width="475" height="678" key="ftp.server.browser" timestamp="1619712161510">
       <screen x="1920" y="0" width="1920" height="1080" />
@@ -382,10 +384,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2536" y="245" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611507068228" />
-    <state x="2543" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1619704612559">
+    <state x="2543" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1619797209703">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="244" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619704612559" />
+    <state x="2543" y="244" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797209703" />
     <state x="2543" y="235" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612176710788" />
   </component>
   <component name="XDebuggerManager">

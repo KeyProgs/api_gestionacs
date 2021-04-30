@@ -1,4 +1,4 @@
-@inject('menuItemHelper', \JeroenNoten\LaravelAdminLte\Helpers\MenuItemHelper::class)
+@inject('menuItemHelper', '\JeroenNoten\LaravelAdminLte\Helpers\MenuItemHelper')
 
 @if ($menuItemHelper->isSearchBar($item))
 

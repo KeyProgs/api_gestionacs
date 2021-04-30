@@ -237,7 +237,7 @@ dd($request->all());
 
         }
         $sinistres = [];
-        return view('clients.client', ['client' => $client, 'voiture' => $voiture, 'sinistres' => $sinistres]);
+        return view('clients.client', ['client' => $client, 'voiture' => $voiture, 'sinistres' => $sinistres , 'infractions' => null]);
 
 
     }

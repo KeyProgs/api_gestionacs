@@ -9,6 +9,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="4109426a-f157-4df9-a324-b5442ba4a79c" name="assurenard.com" url="http://assurenard.com@assurenard.com">
+        <fileTransfer host="assurenard.com@assurenard.com" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

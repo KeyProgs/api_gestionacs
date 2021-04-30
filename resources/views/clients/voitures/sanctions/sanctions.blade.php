@@ -32,7 +32,9 @@
         </tr>
 
 
-        <input type="hidden" name="nb_sanctions" id="nb_sanctions" value="{{$sanctions->count()}}" />
+        @if(!empty($sanctions))
+            <input type="hidden" name="nb_sanctions" id="nb_sanctions" value="{{@$sanctions->count()}}" />
+
         @foreach($sanctions as $sanction)
             @php  $id++;  @endphp
             <input type="hidden" name="sanction{{$id}}_nb_infractions" id="sanction{{$id}}_nb_infractions" value="{{$sanction->infractions->count()}}" />
@@ -128,7 +130,7 @@
 
 
         @endforeach
-
+        @endif
     </table>
 
 </div>

@@ -52,17 +52,19 @@
                     <ul class="dropdown-menu" style="padding: 10px" id="myDiv">
 
 
-                        @foreach( $infractions as $key =>  $infractionIthem )
+                        @if($infractions !=null)
+                            @foreach( $infractions as $key =>  $infractionIthem )
 
-                            <li>
-                                <p>
-                                    <input type="checkbox" value="{{$infractionIthem->id}}"
-                                           name="infractionIthem_{{$infractionIthem->id}}" id="infractionIthem_{{$infractionIthem->id}}" />
-                                    {{$infractionIthem->id}} {{$infractionIthem->id}}{{$infractionIthem->infraction}}
-                                </p>
-                            </li>
-                        @endforeach
-
+                                <li>
+                                    <p>
+                                        <input type="checkbox" value="{{$infractionIthem->id}}"
+                                               name="infractionIthem_{{$infractionIthem->id}}"
+                                               id="infractionIthem_{{$infractionIthem->id}}"/>
+                                        {{$infractionIthem->id}} {{$infractionIthem->id}}{{$infractionIthem->infraction}}
+                                    </p>
+                                </li>
+                            @endforeach
+                        @endif
 
 
                     </ul>
@@ -71,7 +73,7 @@
                 </div>
 
                 <input type="checkbox"
-                       name="infractionIthem____" id="infractionIthem_{{$key}}" />
+                       name="infractionIthem____" id="infractionIthem_{{@$key}}"/>
             </td>
             <td>
                 <input type="date" class=" form-control form-control-sm"
