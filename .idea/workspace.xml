@@ -28,6 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="148a2f47-2f86-4dec-9483-e151cf073287" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/files/extension_tarif.rar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/js.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/logo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/dist/main.js" afterDir="false" />
@@ -39,16 +41,9 @@
       <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/HelloWorld.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/HelloWorld.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/DetailsClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/DetailsClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/ListClients.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/ListClients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanction_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanction_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanctions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/voitures/sanctions/sanctions.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/common/brand-logo-xs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/menu-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/sidebar/menu-item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" afterDir="false" />
@@ -78,7 +73,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../extension_tarif" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -224,6 +219,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\web\api_gestionacs_v3\public" />
+      <recent name="D:\dev\web\api_gestionacs_v3\files" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\dev\web\api_gestionacs_v3\resources\views\clients\actions" />
       <recent name="D:\dev\web\api_gestionacs_v3\resources\views\clients\voitures\infractions" />
@@ -278,7 +277,7 @@
       <workItem from="1617373874322" duration="2389000" />
       <workItem from="1617720342480" duration="8520000" />
       <workItem from="1619620326423" duration="4728000" />
-      <workItem from="1619701789220" duration="14526000" />
+      <workItem from="1619701789220" duration="22867000" />
     </task>
     <servers />
   </component>
@@ -298,10 +297,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2472" y="205" key="#Deployment" timestamp="1619796964229">
+    <state x="2472" y="205" key="#Deployment" timestamp="1620032261023">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2472" y="205" key="#Deployment/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619796964229" />
+    <state x="2472" y="205" key="#Deployment/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620032261023" />
     <state x="2557" y="220" key="#Options" timestamp="1613732264804">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -358,19 +357,19 @@
     </state>
     <state x="2492" y="298" width="1006" height="638" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613123510984" />
     <state x="2492" y="287" width="677" height="692" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611937352409" />
-    <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1612365191683">
+    <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1619798276274">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612365191683" />
+    <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619798276274" />
     <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619797342444">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797342444" />
     <state x="2486" y="149" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612180028068" />
-    <state x="2739" y="134" width="843" height="832" key="find.popup" timestamp="1619797347766">
+    <state x="2739" y="134" width="843" height="832" key="find.popup" timestamp="1619802714177">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2739" y="134" width="843" height="832" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797347766" />
+    <state x="2739" y="134" width="843" height="832" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619802714177" />
     <state x="2918" y="239" width="843" height="801" key="find.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612193578292" />
     <state x="2779" y="279" width="475" height="678" key="ftp.server.browser" timestamp="1619712161510">
       <screen x="1920" y="0" width="1920" height="1080" />

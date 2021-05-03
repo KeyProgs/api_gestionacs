@@ -308,9 +308,9 @@ return [
             'url'        => '#',
         ],
         [
-            'text'       => 'warning',
+            'text'       => 'Telecharger Extension',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => '/files/extension_tarif.rar',
         ],
         [
             'text'       => 'information',
