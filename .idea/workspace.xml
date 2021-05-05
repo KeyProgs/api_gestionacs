@@ -19,17 +19,10 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="148a2f47-2f86-4dec-9483-e151cf073287" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/files/extension_tarif.rar" afterDir="false" />
+    <list default="true" id="aa062a6e-ab0b-4276-846c-9002408f76e0" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/js.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/logo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/dist/main.js" afterDir="false" />
@@ -42,8 +35,7 @@
       <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/DetailsClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/DetailsClient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/ListClients.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/ListClients.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vendor/adminlte/en/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vendor/adminlte/en/menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" afterDir="false" />
@@ -73,7 +65,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../extension_tarif" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -219,14 +211,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\dev\web\api_gestionacs_v3\public" />
-      <recent name="D:\dev\web\api_gestionacs_v3\files" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\dev\web\api_gestionacs_v3\resources\views\clients\actions" />
       <recent name="D:\dev\web\api_gestionacs_v3\resources\views\clients\voitures\infractions" />
       <recent name="D:\dev\web\extension_tarif\compagnies\eurodommages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\dev\web\api_gestionacs_v3\public" />
+      <recent name="D:\dev\web\api_gestionacs_v3\files" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.phpunit.xml">
