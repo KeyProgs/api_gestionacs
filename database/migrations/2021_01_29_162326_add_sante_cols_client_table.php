@@ -14,12 +14,12 @@ class AddSanteColsClientTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->date('sante_date_contrat')->nullable();
-            $table->string('sante_sc',20)->nullable();
+//            $table->date('sante_date_contrat')->nullable();
+//            $table->string('sante_sc',20)->nullable();
             $table->string('sante_sc_clef',3)->nullable();
-            $table->boolean('sante_distance')->nullable();
-            $table->unsignedBigInteger('regime_id')->nullable();
-            $table->unsignedBigInteger('sante_assureur')->nullable();
+//            $table->boolean('sante_distance')->nullable();
+//            $table->unsignedBigInteger('regime_id')->nullable();
+//            $table->unsignedBigInteger('sante_assureur')->nullable();
         });
     }
 

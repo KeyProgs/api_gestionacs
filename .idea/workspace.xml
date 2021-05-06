@@ -23,19 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa062a6e-ab0b-4276-846c-9002408f76e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api_acs_v3.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/js.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/logo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/HelloWorld.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/HelloWorld.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/DetailsClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/DetailsClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/ListClients.js" beforeDir="false" afterPath="$PROJECT_DIR$/../React/gestionacs_react/src/compenents/clients/ListClients.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/vendor/adminlte/en/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vendor/adminlte/en/menu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_18_140920_add__col_usage_id.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_11_18_140920_add__col_usage_id.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_29_162326_add_sante_cols_client_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_29_162326_add_sante_cols_client_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_10_110114_create__actions_tables.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_10_110114_create__actions_tables.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" afterDir="false" />
@@ -67,6 +62,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -199,6 +202,7 @@
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql&#10;mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
@@ -245,7 +249,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="148a2f47-2f86-4dec-9483-e151cf073287" name="Default Changelist" comment="" />
+      <changelist id="aa062a6e-ab0b-4276-846c-9002408f76e0" name="Default Changelist" comment="" />
       <created>1605715540047</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -270,6 +274,7 @@
       <workItem from="1617720342480" duration="8520000" />
       <workItem from="1619620326423" duration="4728000" />
       <workItem from="1619701789220" duration="22867000" />
+      <workItem from="1620228149152" duration="5063000" />
     </task>
     <servers />
   </component>
@@ -287,99 +292,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="2472" y="205" key="#Deployment" timestamp="1620032261023">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2472" y="205" key="#Deployment/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1620032261023" />
-    <state x="2557" y="220" key="#Options" timestamp="1613732264804">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2557" y="220" key="#Options/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613732264804" />
-    <state x="2472" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611937307652">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2472" y="197" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611937307652" />
-    <state x="2640" y="341" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1619701023749">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2640" y="341" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619701023749" />
-    <state x="2660" y="305" key="FileChooserDialogImpl" timestamp="1613902542976">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2660" y="305" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613902542976" />
-    <state x="2660" y="294" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612193562950" />
-    <state width="1876" height="358" key="GridCell.Tab.0.bottom" timestamp="1614425857769">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1876" height="358" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614425857769" />
-    <state width="1876" height="358" key="GridCell.Tab.0.center" timestamp="1614425857769">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1876" height="358" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614425857769" />
-    <state width="1876" height="358" key="GridCell.Tab.0.left" timestamp="1614425857617">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1876" height="358" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614425857617" />
-    <state width="1876" height="358" key="GridCell.Tab.0.right" timestamp="1614425857769">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="1876" height="358" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1614425857769" />
-    <state x="2303" y="161" key="SettingsEditor" timestamp="1619701282271">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2303" y="161" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619701282271" />
-    <state x="2303" y="155" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611239166329" />
-    <state width="522" height="446" key="SwitcherDM" timestamp="1612799826174">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state width="522" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1612799826174" />
-    <state x="2758" y="442" width="316" height="269" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1613574246456">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2758" y="442" width="316" height="269" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613574246456" />
-    <state x="2758" y="426" width="316" height="248" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612179013513" />
-    <state x="2676" y="359" width="407" height="359" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1613573981254">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2676" y="359" width="407" height="359" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613573981254" />
-    <state x="2492" y="298" width="1006" height="638" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1613123510984">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2492" y="298" width="1006" height="638" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613123510984" />
-    <state x="2492" y="287" width="677" height="692" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611937352409" />
-    <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1619798276274">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2012" y="96" width="1736" height="931" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619798276274" />
-    <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1619797342444">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2486" y="155" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797342444" />
-    <state x="2486" y="149" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612180028068" />
-    <state x="2739" y="134" width="843" height="832" key="find.popup" timestamp="1619802714177">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2739" y="134" width="843" height="832" key="find.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619802714177" />
-    <state x="2918" y="239" width="843" height="801" key="find.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612193578292" />
-    <state x="2779" y="279" width="475" height="678" key="ftp.server.browser" timestamp="1619712161510">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2779" y="279" width="475" height="678" key="ftp.server.browser/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619712161510" />
-    <state x="2750" y="438" key="publish.login" timestamp="1613732393323">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2750" y="438" key="publish.login/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1613732393323" />
-    <state x="2536" y="245" key="run.anything.popup" timestamp="1611507068228">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2536" y="245" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611507068228" />
-    <state x="2543" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1619797209703">
-      <screen x="1920" y="0" width="1920" height="1080" />
-    </state>
-    <state x="2543" y="244" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1080@1920.0.1920.1080" timestamp="1619797209703" />
-    <state x="2543" y="235" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1612176710788" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

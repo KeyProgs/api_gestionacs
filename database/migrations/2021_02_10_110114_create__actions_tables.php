@@ -25,7 +25,7 @@ class CreateActionsTables extends Migration
             $table->unsignedBigInteger('responsable');
             $table->foreign('responsable')->references('id')->on('users');
 
-            $table->unsignedBigInteger('responsable');
+            $table->unsignedBigInteger('id_action_type');
             $table->foreign('id_action_type')->references('id')->on('action_types');
 
 

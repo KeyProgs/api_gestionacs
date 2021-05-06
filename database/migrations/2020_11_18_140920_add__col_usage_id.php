@@ -15,7 +15,7 @@ class AddColUsageId extends Migration
     {
         Schema::table('voitures', function (Blueprint $table) {
 
-            $table->integer('usage_id')->nullable()->after('matricule');
+//            $table->integer('usage_id')->nullable()->after('matricule');
 
         });
     }
