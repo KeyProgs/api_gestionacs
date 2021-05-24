@@ -15,7 +15,7 @@ class CreateActionTypesTables extends Migration
     {
         Schema::create('action_types', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('titre',99)->nullable();
+            $table->string('titre', 99)->nullable();
 
             $table->timestamps();
         });

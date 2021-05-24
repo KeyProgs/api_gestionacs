@@ -12,7 +12,8 @@ class Client extends Model
 
     use HasFactory;
 
-    function user(){
+    function user()
+    {
         return $this->belongsTo(User::class);
     }
 }

@@ -11,7 +11,7 @@ class Infraction extends Model
 
     public function sanctions()
     {
-        return $this->belongsToMany(Sanction::class,'sanction_infractions',null,null,null,null,null);
+        return $this->belongsToMany(Sanction::class, 'sanction_infractions', null, null, null, null, null);
     }
 
 }

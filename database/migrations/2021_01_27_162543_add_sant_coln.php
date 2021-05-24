@@ -15,7 +15,7 @@ class AddSantColn extends Migration
     {
         Schema::table('clients', function (Blueprint $table) {
             $table->date('sante_date_contrat')->nullable();
-            $table->string('sante_sc',20)->nullable();
+            $table->string('sante_sc', 20)->nullable();
             $table->boolean('sante_distance')->nullable();
             $table->unsignedBigInteger('regime_id')->nullable();
             $table->unsignedBigInteger('sante_assureur')->nullable();
@@ -30,7 +30,6 @@ class AddSantColn extends Migration
     public function down()
     {
         Schema::table('clients', function (Blueprint $table) {
-
 
 
             //

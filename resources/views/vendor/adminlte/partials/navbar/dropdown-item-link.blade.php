@@ -2,7 +2,7 @@
 
     <a class="dropdown-item" href="{{ $item['href'] }}"
        @if(isset($item['target'])) target="{{ $item['target'] }}" @endif
-       {!! $item['data-compiled'] ?? '' !!}>
+        {!! $item['data-compiled'] ?? '' !!}>
 
         {{-- Icon (optional) --}}
         @if(isset($item['icon']))

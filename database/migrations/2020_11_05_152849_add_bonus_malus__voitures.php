@@ -15,7 +15,7 @@ class AddBonusMalusVoitures extends Migration
     {
         Schema::table('voitures', function (Blueprint $table) {
             //
-            $table->char('bonus_malus',20)->nullable()->after('matricule');
+            $table->char('bonus_malus', 20)->nullable()->after('matricule');
         });
     }
 

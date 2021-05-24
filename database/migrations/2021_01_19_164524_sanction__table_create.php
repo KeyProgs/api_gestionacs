@@ -28,8 +28,6 @@ class SanctionTableCreate extends Migration
             $table->string('sangtest')->nullable();
 
 
-
-
             $table->timestamps();
         });
     }

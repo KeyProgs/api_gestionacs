@@ -14,7 +14,7 @@ class AddClResiliationDate extends Migration
     public function up()
     {
         Schema::table('voitures', function (Blueprint $table) {
-           // $table->date('resiliation_date')->after('etat_assurance')->nullable();
+            // $table->date('resiliation_date')->after('etat_assurance')->nullable();
             //
         });
     }

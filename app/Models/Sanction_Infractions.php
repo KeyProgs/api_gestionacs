@@ -8,8 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class Sanction_Infractions extends Model
 {
     use HasFactory;
-
-
-
-
 }

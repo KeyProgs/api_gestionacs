@@ -16,7 +16,6 @@ class CreateTachesTables extends Migration
         Schema::create('taches', function (Blueprint $table) {
 
 
-
             $table->timestamps();
         });
     }

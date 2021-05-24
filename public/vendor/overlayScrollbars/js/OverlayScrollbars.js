@@ -13,7 +13,9 @@
 
 (function (global, factory) {
     if (typeof define === 'function' && define.amd)
-        define(function () { return factory(global, global.document, undefined); });
+        define(function () {
+            return factory(global, global.document, undefined);
+        });
     else if (typeof module === 'object' && typeof module.exports === 'object')
         module.exports = factory(global, global.document, undefined);
     else
@@ -58,6 +60,7 @@
             var cssCache = {};
             var cssPrefixes = ['-webkit-', '-moz-', '-o-', '-ms-'];
             var jsPrefixes = ['WebKit', 'Moz', 'O', 'MS'];
+
             function firstLetterToUpper(str) {
                 return str.charAt(0).toUpperCase() + str.slice(1);
             }
@@ -116,6 +119,7 @@
             function windowSize(x) {
                 return x ? window.innerWidth || document.documentElement[LEXICON.cW] || document.body[LEXICON.cW] : window.innerHeight || document.documentElement[LEXICON.cH] || document.body[LEXICON.cH];
             }
+
             function bind(func, thisObj) {
                 if (typeof func != TYPES.f) {
                     throw "Can't bind function!";
@@ -125,8 +129,11 @@
                 }
                 var proto = LEXICON.p;
                 var aArgs = Array[proto].slice.call(arguments, 2);
-                var fNOP = function () { };
-                var fBound = function () { return func.apply(this instanceof fNOP ? this : thisObj, aArgs.concat(Array[proto].slice.call(arguments))); };
+                var fNOP = function () {
+                };
+                var fBound = function () {
+                    return func.apply(this instanceof fNOP ? this : thisObj, aArgs.concat(Array[proto].slice.call(arguments)));
+                };
 
                 if (func[proto])
                     fNOP[proto] = func[proto]; // Function.prototype doesn't have a prototype property
@@ -164,13 +171,17 @@
                  * Gets the RequestAnimationFrame method or it's corresponding polyfill.
                  * @returns {*|Function} The RequestAnimationFrame method or it's corresponding polyfill.
                  */
-                rAF: bind(VENDORS._jsAPI, 0, 'requestAnimationFrame', false, function (func) { return window.setTimeout(func, 1000 / 60); }),
+                rAF: bind(VENDORS._jsAPI, 0, 'requestAnimationFrame', false, function (func) {
+                    return window.setTimeout(func, 1000 / 60);
+                }),
 
                 /**
                  * Gets the CancelAnimationFrame method or it's corresponding polyfill.
                  * @returns {*|Function} The CancelAnimationFrame method or it's corresponding polyfill.
                  */
-                cAF: bind(VENDORS._jsAPI, 0, 'cancelAnimationFrame', false, function (id) { return window.clearTimeout(id); }),
+                cAF: bind(VENDORS._jsAPI, 0, 'cancelAnimationFrame', false, function (id) {
+                    return window.clearTimeout(id);
+                }),
 
                 /**
                  * Gets the current time.
@@ -271,8 +282,8 @@
                         try {
                             if (arr[i] === item)
                                 return i;
+                        } catch (e) {
                         }
-                        catch (e) { }
                     return -1;
                 },
 
@@ -310,10 +321,10 @@
                  * @param propName The unprefixed CSS property name.
                  * @returns {string|null} The vendor-prefixed CSS property or null if the browser doesn't support the given CSS property.
 
-                cssProp: function(propName) {
+                 cssProp: function(propName) {
                     return VENDORS._cssProperty(propName);
                 }
-                */
+                 */
             }
         })();
 
@@ -415,28 +426,42 @@
                     return ((t /= d / 2) < 1) ? -c / 2 * (_easingsMath.t(1 - t * t) - 1) + b : c / 2 * (_easingsMath.t(1 - (t -= 2) * t) + 1) + b;
                 },
                 easeInElastic: function (x, t, b, c, d) {
-                    var s = _easingsMath.o; var p = 0; var a = c;
-                    if (t == 0) return b; if ((t /= d) == 1) return b + c; if (!p) p = d * .3;
-                    if (a < _easingsMath.a(c)) { a = c; s = p / 4; }
-                    else s = p / (2 * _easingsMath.p) * _easingsMath.n(c / a);
-                    return -(a * _easingsMath.w(2, 10 * (t -= 1)) * _easingsMath.s((t * d - s) * (2 * _easingsMath.p) / p)) + b;
-                },
-                easeOutElastic: function (x, t, b, c, d) {
-                    var s = _easingsMath.o; var p = 0; var a = c;
+                    var s = _easingsMath.o;
+                    var p = 0;
+                    var a = c;
                     if (t == 0) return b;
                     if ((t /= d) == 1) return b + c;
                     if (!p) p = d * .3;
-                    if (a < _easingsMath.a(c)) { a = c; s = p / 4; }
-                    else s = p / (2 * _easingsMath.p) * _easingsMath.n(c / a);
+                    if (a < _easingsMath.a(c)) {
+                        a = c;
+                        s = p / 4;
+                    } else s = p / (2 * _easingsMath.p) * _easingsMath.n(c / a);
+                    return -(a * _easingsMath.w(2, 10 * (t -= 1)) * _easingsMath.s((t * d - s) * (2 * _easingsMath.p) / p)) + b;
+                },
+                easeOutElastic: function (x, t, b, c, d) {
+                    var s = _easingsMath.o;
+                    var p = 0;
+                    var a = c;
+                    if (t == 0) return b;
+                    if ((t /= d) == 1) return b + c;
+                    if (!p) p = d * .3;
+                    if (a < _easingsMath.a(c)) {
+                        a = c;
+                        s = p / 4;
+                    } else s = p / (2 * _easingsMath.p) * _easingsMath.n(c / a);
                     return a * _easingsMath.w(2, -10 * t) * _easingsMath.s((t * d - s) * (2 * _easingsMath.p) / p) + c + b;
                 },
                 easeInOutElastic: function (x, t, b, c, d) {
-                    var s = _easingsMath.o; var p = 0; var a = c;
+                    var s = _easingsMath.o;
+                    var p = 0;
+                    var a = c;
                     if (t == 0) return b;
                     if ((t /= d / 2) == 2) return b + c;
                     if (!p) p = d * (.3 * 1.5);
-                    if (a < _easingsMath.a(c)) { a = c; s = p / 4; }
-                    else s = p / (2 * _easingsMath.p) * _easingsMath.n(c / a);
+                    if (a < _easingsMath.a(c)) {
+                        a = c;
+                        s = p / 4;
+                    } else s = p / (2 * _easingsMath.p) * _easingsMath.n(c / a);
                     if (t < 1) return -.5 * (a * _easingsMath.w(2, 10 * (t -= 1)) * _easingsMath.s((t * d - s) * (2 * _easingsMath.p) / p)) + b;
                     return a * _easingsMath.w(2, -10 * (t -= 1)) * _easingsMath.s((t * d - s) * (2 * _easingsMath.p) / p) * .5 + c + b;
                 },
@@ -474,33 +499,33 @@
             /*
              *
              * TERMS OF USE - EASING EQUATIONS
-             * 
-             * Open source under the BSD License. 
-             * 
+             *
+             * Open source under the BSD License.
+             *
              * Copyright Â© 2001 Robert Penner
              * All rights reserved.
-             * 
-             * Redistribution and use in source and binary forms, with or without modification, 
+             *
+             * Redistribution and use in source and binary forms, with or without modification,
              * are permitted provided that the following conditions are met:
-             * 
-             * Redistributions of source code must retain the above copyright notice, this list of 
+             *
+             * Redistributions of source code must retain the above copyright notice, this list of
              * conditions and the following disclaimer.
-             * Redistributions in binary form must reproduce the above copyright notice, this list 
-             * of conditions and the following disclaimer in the documentation and/or other materials 
+             * Redistributions in binary form must reproduce the above copyright notice, this list
+             * of conditions and the following disclaimer in the documentation and/or other materials
              * provided with the distribution.
-             * 
-             * Neither the name of the author nor the names of contributors may be used to endorse 
+             *
+             * Neither the name of the author nor the names of contributors may be used to endorse
              * or promote products derived from this software without specific prior written permission.
-             * 
-             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+             *
+             * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
              * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
              * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
              *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
              *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+             *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
              * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
-             * OF THE POSSIBILITY OF SUCH DAMAGE. 
+             *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+             * OF THE POSSIBILITY OF SUCH DAMAGE.
              *
              */
         })();
@@ -623,7 +648,8 @@
                 }
 
 
-                for (key in obj) { /**/ }
+                for (key in obj) { /**/
+                }
 
                 return _type(key) == TYPES.u || hasOwnProperty.call(obj, key);
             };
@@ -636,8 +662,7 @@
                         if (callback.call(obj[i], i, obj[i]) === false)
                             break;
                     }
-                }
-                else {
+                } else {
                     for (i in obj) {
                         if (callback.call(obj[i], i, obj[i]) === false)
                             break;
@@ -673,8 +698,7 @@
                 if (_type(child) == TYPES.a) {
                     for (var i = 0; i < child[LEXICON.l]; i++)
                         insertAdjacentElement(el, strategy, child[i]);
-                }
-                else if (_type(child) == TYPES.s)
+                } else if (_type(child) == TYPES.s)
                     el.insertAdjacentHTML(strategy, child);
                 else
                     el.insertAdjacentElement(strategy, child.nodeType ? child : child[0]);
@@ -684,7 +708,8 @@
                 try {
                     if (el[LEXICON.s][prop] !== undefined)
                         el[LEXICON.s][prop] = parseCSSVal(prop, val);
-                } catch (e) { }
+                } catch (e) {
+                }
             }
 
             function parseCSSVal(prop, val) {
@@ -701,8 +726,7 @@
                 if (animObj.q[LEXICON.l] > 0) {
                     nextAnim = animObj.q[0];
                     animate(animObj.el, nextAnim.props, nextAnim.duration, nextAnim.easing, nextAnim.complete, true);
-                }
-                else {
+                } else {
                     index = inArray(animObj, _animations);
                     if (index > -1)
                         _animations.splice(index, 1);
@@ -736,8 +760,7 @@
                     specialEasing = options.specialEasing;
                     complete = options.complete;
                     duration = options.duration;
-                }
-                else
+                } else
                     duration = options;
                 specialEasing = specialEasing || {};
                 duration = duration || 400;
@@ -834,20 +857,17 @@
                                     startNextAnimationInQ(animObj);
                                     if (isFunction(complete))
                                         complete();
-                                }
-                                else
+                                } else
                                     qObj.frame = COMPATIBILITY.rAF()(frame);
                             };
                             qObj.frame = COMPATIBILITY.rAF()(frame);
-                        }
-                        else {
+                        } else {
                             for (key in to)
                                 setAnimationValue(el, key, to[key]);
                             startNextAnimationInQ(animObj);
                         }
                     }
-                }
-                else if (guaranteedNext)
+                } else if (guaranteedNext)
                     startNextAnimationInQ(animObj);
             }
 
@@ -899,8 +919,7 @@
                         el = document.createElement('div');
                         el.innerHTML = selector;
                         elms = el.children;
-                    }
-                    else {
+                    } else {
                         elms = document.querySelectorAll(selector);
                     }
 
@@ -937,12 +956,12 @@
                             if (el.addEventListener) {
                                 for (; i < eventNameLength; i++)
                                     el.addEventListener(eventName[i], handler);
-                            }
-                            else if (el.detachEvent) {
+                            } else if (el.detachEvent) {
                                 for (; i < eventNameLength; i++)
                                     el.attachEvent('on' + eventName[i], handler);
                             }
-                        } catch (e) { }
+                        } catch (e) {
+                        }
                     });
                 },
 
@@ -958,12 +977,12 @@
                             if (el.removeEventListener) {
                                 for (; i < eventNameLength; i++)
                                     el.removeEventListener(eventName[i], handler);
-                            }
-                            else if (el.detachEvent) {
+                            } else if (el.detachEvent) {
                                 for (; i < eventNameLength; i++)
                                     el.detachEvent('on' + eventName[i], handler);
                             }
-                        } catch (e) { }
+                        } catch (e) {
+                        }
                     });
                 },
 
@@ -990,8 +1009,7 @@
                             event = document.createEvent('HTMLEvents');
                             event.initEvent(eventName, true, false);
                             el.dispatchEvent(event);
-                        }
-                        else {
+                        } else {
                             el.fireEvent('on' + eventName);
                         }
                     });
@@ -1000,19 +1018,27 @@
                 //DOM NODE INSERTING / REMOVING:
 
                 append: function (child) {
-                    return this.each(function () { insertAdjacentElement(this, 'beforeend', child); });
+                    return this.each(function () {
+                        insertAdjacentElement(this, 'beforeend', child);
+                    });
                 },
 
                 prepend: function (child) {
-                    return this.each(function () { insertAdjacentElement(this, 'afterbegin', child); });
+                    return this.each(function () {
+                        insertAdjacentElement(this, 'afterbegin', child);
+                    });
                 },
 
                 before: function (child) {
-                    return this.each(function () { insertAdjacentElement(this, 'beforebegin', child); });
+                    return this.each(function () {
+                        insertAdjacentElement(this, 'beforebegin', child);
+                    });
                 },
 
                 after: function (child) {
-                    return this.each(function () { insertAdjacentElement(this, 'afterend', child); });
+                    return this.each(function () {
+                        insertAdjacentElement(this, 'afterend', child);
+                    });
                 },
 
                 remove: function () {
@@ -1032,7 +1058,7 @@
 
                     this.each(function () {
                         parent = this.parentNode;
-                        if (inArray(parent, parents) === - 1)
+                        if (inArray(parent, parents) === -1)
                             parents.push(parent);
                     });
 
@@ -1079,7 +1105,9 @@
                 },
 
                 wrap: function (wrapperHTML) {
-                    return this.each(function () { FakejQuery(this).wrapAll(wrapperHTML); });
+                    return this.each(function () {
+                        FakejQuery(this).wrapAll(wrapperHTML);
+                    });
                 },
 
 
@@ -1097,14 +1125,12 @@
 
                             //https://bugzilla.mozilla.org/show_bug.cgi?id=548397 can be null sometimes if iframe with display: none (firefox only!)
                             return getCptStyle ? cptStyle != null ? cptStyle.getPropertyValue(styles) : el[LEXICON.s][styles] : cptStyle;
-                        }
-                        else {
+                        } else {
                             return this.each(function () {
                                 setCSSVal(this, styles, val);
                             });
                         }
-                    }
-                    else {
+                    } else {
                         return this.each(function () {
                             for (key in styles)
                                 setCSSVal(this, key, styles[key]);
@@ -1151,8 +1177,7 @@
                             if (supportClassList) {
                                 while ((clazz = classes[v++]))
                                     elmClassList.add(clazz);
-                            }
-                            else {
+                            } else {
                                 curValue = elem.className + _strEmpty;
                                 cur = elem.nodeType === 1 && (_strSpace + stripAndCollapse(curValue) + _strSpace);
 
@@ -1195,8 +1220,7 @@
                             if (supportClassList) {
                                 while ((clazz = classes[v++]))
                                     elmClassList.remove(clazz);
-                            }
-                            else {
+                            } else {
                                 curValue = elem.className + _strEmpty;
                                 cur = elem.nodeType === 1 && (_strSpace + stripAndCollapse(curValue) + _strSpace);
 
@@ -1217,11 +1241,15 @@
                 },
 
                 hide: function () {
-                    return this.each(function () { this[LEXICON.s].display = 'none'; });
+                    return this.each(function () {
+                        this[LEXICON.s].display = 'none';
+                    });
                 },
 
                 show: function () {
-                    return this.each(function () { this[LEXICON.s].display = 'block'; });
+                    return this.each(function () {
+                        this[LEXICON.s].display = 'block';
+                    });
                 },
 
                 attr: function (attrName, value) {
@@ -1236,7 +1264,9 @@
                 },
 
                 removeAttr: function (attrName) {
-                    return this.each(function () { this.removeAttribute(attrName); });
+                    return this.each(function () {
+                        this.removeAttribute(attrName);
+                    });
                 },
 
                 offset: function () {
@@ -1328,8 +1358,7 @@
                             if (selector) {
                                 if ((el.matches && el.matches(selector)) || matches(el, selector))
                                     children.push(el);
-                            }
-                            else
+                            } else
                                 children.push(el);
                         }
                     });
@@ -1385,11 +1414,15 @@
                 //ANIMATION:
 
                 animate: function (props, duration, easing, complete) {
-                    return this.each(function () { animate(this, props, duration, easing, complete); });
+                    return this.each(function () {
+                        animate(this, props, duration, easing, complete);
+                    });
                 },
 
                 stop: function (clearQ, jump) {
-                    return this.each(function () { stop(this, clearQ, jump); });
+                    return this.each(function () {
+                        stop(this, clearQ, jump);
+                    });
                 }
             };
 
@@ -1422,22 +1455,19 @@
                 if (argLen < 1) {
                     //return all targets
                     return _targets;
-                }
-                else {
+                } else {
                     if (instance) {
                         //register instance
                         target[_instancePropertyString] = instance;
                         _targets.push(target);
-                    }
-                    else {
+                    } else {
                         var index = COMPATIBILITY.inA(target, _targets);
                         if (index > -1) {
                             if (argLen > 1) {
                                 //unregister instance
                                 delete target[_instancePropertyString];
                                 _targets.splice(index, 1);
-                            }
-                            else {
+                            } else {
                                 //get instance from target
                                 return _targets[index][_instancePropertyString];
                             }
@@ -1597,8 +1627,7 @@
                                                 delete value[prop];
                                             }
                                         });
-                                    }
-                                    else if (!templateIsComplex) {
+                                    } else if (!templateIsComplex) {
                                         for (i = 0; i < templateTypes[LEXICON.l]; i++) {
                                             currType = templateTypes[i];
                                             templateValueType = type(currType);
@@ -1624,8 +1653,7 @@
                                                     if (isValid)
                                                         break;
                                                 }
-                                            }
-                                            else {
+                                            } else {
                                                 errorPossibleTypes.push(currType);
 
                                                 if (dataValueType === currType) {
@@ -1643,8 +1671,7 @@
 
                                             if (isRestrictedValue ? inArray(dataDiffValue, restrictedStringValuesPossibilitiesSplit) < 0 : isDiff)
                                                 validatedOptionsPrepared[prop] = isRestrictedValue ? mainPossibility : dataValue;
-                                        }
-                                        else if (writeErrors) {
+                                        } else if (writeErrors) {
                                             console.warn(error + " it doesn't accept the type [ " + dataValueType.toUpperCase() + " ] with the value of \"" + dataValue + "\".\r\n" +
                                                 "Accepted types are: [ " + errorPossibleTypes.join(', ').toUpperCase() + " ]." +
                                                 (errorRestrictedStrings[length] > 0 ? "\r\nValid strings are: [ " + errorRestrictedStrings.join(', ').split(restrictedStringsPossibilitiesSplit).join(', ') + " ]." : ''));
@@ -1747,7 +1774,8 @@
                         scrollbarDummyElement.addClass('os-viewport-native-scrollbars-invisible');
                         try {
                             result = (scrollbarDummyElement.css('scrollbar-width') === 'none' && (msie > 9 || !msie)) || window.getComputedStyle(scrollbarDummyElement0, '::-webkit-scrollbar').getPropertyValue('display') === 'none';
-                        } catch (ex) { }
+                        } catch (ex) {
+                        }
 
                         //fix opera bug: scrollbar styles will only appear if overflow value is scroll or auto during the activation of the style.
                         //and set overflow to scroll
@@ -1756,7 +1784,7 @@
 
                         return result;
                     })(),
-                    overlayScrollbarDummySize: { x: 30, y: 30 },
+                    overlayScrollbarDummySize: {x: 30, y: 30},
                     cssCalc: (function () {
                         var dummyStyle = document.createElement('div')[LEXICON.s];
                         var strCalc = 'calc';
@@ -1787,7 +1815,11 @@
                         return (scrollSize.w - scrollSize2.w) !== 0 || (scrollSize.h - scrollSize2.h) !== 0;
                     })(),
                     rtlScrollBehavior: (function () {
-                        scrollbarDummyElement.css({ 'overflow-y': strHidden, 'overflow-x': strScroll, 'direction': 'rtl' }).scrollLeft(0);
+                        scrollbarDummyElement.css({
+                            'overflow-y': strHidden,
+                            'overflow-x': strScroll,
+                            'direction': 'rtl'
+                        }).scrollLeft(0);
                         var dummyContainerOffset = scrollbarDummyElement.offset();
                         var dummyContainerChildOffset = dummyContainerChild.offset();
                         //https://github.com/KingSora/OverlayScrollbars/issues/187
@@ -1816,7 +1848,8 @@
                                     supportsPassive = true;
                                 }
                             }));
-                        } catch (e) { }
+                        } catch (e) {
+                        }
                         return supportsPassive;
                     })(),
                     supportResizeObserver: !!COMPATIBILITY.rO(),
@@ -2176,7 +2209,7 @@
 
                 //attrs viewport shall inherit from target
                 var _viewportAttrsFromTarget = [LEXICON.ti];
-                
+
                 //options:
                 var _defaultOptions;
                 var _currentOptions;
@@ -2303,7 +2336,7 @@
                 //==== Event Listener ====//
 
                 /**
-                 * Adds or removes a event listener from the given element. 
+                 * Adds or removes a event listener from the given element.
                  * @param element The element to which the event listener shall be applied or removed.
                  * @param eventNames The name(s) of the events.
                  * @param listener The method which shall be called.
@@ -2319,11 +2352,10 @@
                     if (collected) {
                         for (; i < eventNames[LEXICON.l]; i++)
                             setupResponsiveEventListener(element, eventNames[i], listener[i], remove);
-                    }
-                    else {
+                    } else {
                         for (; i < events[LEXICON.l]; i++) {
                             if (_supportPassiveEvents)
-                                element[0][method](events[i], listener, { passive: passive || false });
+                                element[0][method](events[i], listener, {passive: passive || false});
                             else
                                 element[onOff](events[i], listener);
                         }
@@ -2359,17 +2391,19 @@
                                 var element = targetElement.addClass('observed').append(generateDiv(_classNameResizeObserverElement)).contents()[0];
                                 var observer = element[_strResizeObserverProperty] = new resizeObserver(callback);
                                 observer.observe(element);
-                            }
-                            else {
+                            } else {
                                 if (_msieVersion > 9 || !_autoUpdateRecommended) {
                                     targetElement.prepend(
                                         generateDiv(_classNameResizeObserverElement,
-                                            generateDiv({ c: _classNameResizeObserverItemElement, dir: 'ltr' },
+                                            generateDiv({c: _classNameResizeObserverItemElement, dir: 'ltr'},
                                                 generateDiv(_classNameResizeObserverItemElement,
                                                     generateDiv(_classNameResizeObserverItemFinalElement)
                                                 ) +
                                                 generateDiv(_classNameResizeObserverItemElement,
-                                                    generateDiv({ c: _classNameResizeObserverItemFinalElement, style: 'width: 200%; height: 200%' })
+                                                    generateDiv({
+                                                        c: _classNameResizeObserverItemFinalElement,
+                                                        style: 'width: 200%; height: 200%'
+                                                    })
                                                 )
                                             )
                                         )
@@ -2420,8 +2454,7 @@
                                         if (event && isDirty && !rAFId) {
                                             COMPATIBILITY.cAF()(rAFId);
                                             rAFId = COMPATIBILITY.rAF()(onResized);
-                                        }
-                                        else if (!event)
+                                        } else if (!event)
                                             onResized();
 
                                         reset();
@@ -2453,15 +2486,13 @@
                                     expandElementChild.css(expandChildCSS);
 
                                     reset();
-                                }
-                                else {
+                                } else {
                                     var attachEvent = _documentElementNative.attachEvent;
                                     var isIE = _msieVersion !== undefined;
                                     if (attachEvent) {
                                         targetElement.prepend(generateDiv(_classNameResizeObserverElement));
                                         findFirst(targetElement, _strDot + _classNameResizeObserverElement)[0].attachEvent('onresize', callback);
-                                    }
-                                    else {
+                                    } else {
                                         var obj = _documentElementNative.createElement(TYPES.o);
                                         obj.setAttribute(LEXICON.ti, '-1');
                                         obj.setAttribute(LEXICON.c, _classNameResizeObserverElement);
@@ -2492,8 +2523,7 @@
                                             css[_strLeft] = 0;
                                             css[_strRight] = _strAuto;
                                             scrollLeftValue = constScroll;
-                                        }
-                                        else {
+                                        } else {
                                             css[_strLeft] = _strAuto;
                                             css[_strRight] = 0;
                                             scrollLeftValue = _rtlScrollBehavior.n ? -constScroll : _rtlScrollBehavior.i ? 0 : constScroll;
@@ -2525,8 +2555,7 @@
                                     resizeObserverObj.disconnect();
                                     delete element[_strResizeObserverProperty];
                                 }
-                            }
-                            else {
+                            } else {
                                 remove(targetElement.children(_strDot + _classNameResizeObserverElement).eq(0));
                             }
                         }
@@ -2537,8 +2566,8 @@
                  * Freezes or unfreezes the given resize observer.
                  * @param targetElement The element to which the target resize observer is applied.
                  * @param freeze True if the resize observer shall be frozen, false otherwise.
-                 
-                function freezeResizeObserver(targetElement, freeze) {
+
+                 function freezeResizeObserver(targetElement, freeze) {
                     if (targetElement !== undefined) {
                         if(freeze) {
                             if (_supportResizeObserver) {
@@ -2569,7 +2598,7 @@
                         }
                     }
                 }
-                */
+                 */
 
 
                 //==== Mutation Observers ====//
@@ -2600,7 +2629,7 @@
                                     mutationTarget = mutation.target;
                                     mutationAttrName = mutation.attributeName;
 
-                                    if(!doUpdate) {
+                                    if (!doUpdate) {
                                         if (mutationAttrName === LEXICON.c)
                                             doUpdate = hostClassNamesChanged(mutation.oldValue, mutationTarget.className);
                                         else if (mutationAttrName === LEXICON.s)
@@ -2608,12 +2637,12 @@
                                         else
                                             doUpdate = true;
                                     }
-                                    
+
                                     mutatedAttrs.push(mutationAttrName);
                                 });
-                                
+
                                 updateViewportAttrsFromTarget(mutatedAttrs);
-                                
+
                                 if (doUpdate)
                                     _base.update(_strAuto);
                             }
@@ -2717,7 +2746,7 @@
                         changed = checkCache(hostSize, _hostElementSizeChangeDetectedCache);
                         _hostElementSizeChangeDetectedCache = hostSize;
                         if (changed)
-                            update({ _hostSizeChanged: true });
+                            update({_hostSizeChanged: true});
                     }
                 }
 
@@ -2764,13 +2793,13 @@
                  * A callback which will be called after a img element has downloaded its src asynchronous.
                  */
                 function imgOnLoad() {
-                    update({ _contentSizeChanged: true });
+                    update({_contentSizeChanged: true});
                 }
 
                 /**
-                * Adds or removes mouse & touch events of the host element. (for handling auto-hiding of the scrollbars)
-                * @param destroy Indicates whether the events shall be added or removed.
-                */
+                 * Adds or removes mouse & touch events of the host element. (for handling auto-hiding of the scrollbars)
+                 * @param destroy Indicates whether the events shall be added or removed.
+                 */
                 function setupHostMouseTouchEvents(destroy) {
                     setupResponsiveEventListener(_hostElement,
                         _strMouseTouchMoveEvent,
@@ -2930,13 +2959,13 @@
                 }
 
                 /**
-                 * Returns true when a attribute which the MutationObserver would observe has changed.  
+                 * Returns true when a attribute which the MutationObserver would observe has changed.
                  * @returns {boolean} True if one of the attributes which a MutationObserver would observe has changed, false or undefined otherwise.
                  */
                 function meaningfulAttrsChanged() {
                     if (_sleeping || _mutationObserversConnected)
                         return;
-                    
+
                     var elem;
                     var curr;
                     var cache;
@@ -2958,8 +2987,8 @@
                             each(check._attrs, function (index, attr) {
                                 curr = attr.charAt(0) === ':' ? elem.is(attr) : elem.attr(attr);
                                 cache = _updateAutoCache[attr];
-                                
-                                if(checkCache(curr, cache)) {
+
+                                if (checkCache(curr, cache)) {
                                     changedAttrs.push(attr);
                                 }
 
@@ -2969,7 +2998,7 @@
                     });
 
                     updateViewportAttrsFromTarget(changedAttrs);
-                    
+
                     return changedAttrs[LEXICON.l] > 0;
                 }
 
@@ -3062,16 +3091,15 @@
                     each(attrs, function (index, attr) {
                         if (COMPATIBILITY.inA(attr, _viewportAttrsFromTarget) > -1) {
                             var targetAttr = _targetElement.attr(attr);
-                            if(type(targetAttr) == TYPES.s) {
+                            if (type(targetAttr) == TYPES.s) {
                                 _viewportElement.attr(attr, targetAttr);
-                            }
-                            else {
+                            } else {
                                 _viewportElement.removeAttr(attr);
                             }
                         }
                     });
                 }
-                
+
                 /**
                  * Updates the variables and size of the textarea element, and manages the scroll on new line or new character.
                  */
@@ -3140,7 +3168,7 @@
                  *   _contentSizeChanged : boolean,
                  *   _force : boolean,                             == preventSwallowing
                  *   _changedOptions : { },                        == preventSwallowing && preventSleep
-                *  }
+                 *  }
                  */
                 function update(updateHints) {
                     clearTimeout(_swallowedUpdateTimeout);
@@ -3176,8 +3204,7 @@
                         //native scrollbars are hidden, so change the values to zero
                         _nativeScrollbarSize.x = 0;
                         _nativeScrollbarSize.y = 0;
-                    }
-                    else {
+                    } else {
                         //refresh native scrollbar size (in case of zoom)
                         _nativeScrollbarSize = extendDeep({}, globals.nativeScrollbarSize);
                     }
@@ -3303,7 +3330,7 @@
                     _overflowBehaviorCache = extendDeep({}, overflowBehavior);
                     _textareaDynWidthCache = textareaDynWidth;
                     _textareaDynHeightCache = textareaDynHeight;
-                    _hasOverflowCache = _hasOverflowCache || { x: false, y: false };
+                    _hasOverflowCache = _hasOverflowCache || {x: false, y: false};
 
                     //set correct class name to the host element
                     if (classNameChanged) {
@@ -3316,18 +3343,15 @@
                         if (autoUpdate === true) {
                             disconnectMutationObservers();
                             autoUpdateLoop.add(_base);
-                        }
-                        else if (autoUpdate === null) {
+                        } else if (autoUpdate === null) {
                             if (_autoUpdateRecommended) {
                                 disconnectMutationObservers();
                                 autoUpdateLoop.add(_base);
-                            }
-                            else {
+                            } else {
                                 autoUpdateLoop.remove(_base);
                                 connectMutationObservers();
                             }
-                        }
-                        else {
+                        } else {
                             autoUpdateLoop.remove(_base);
                             connectMutationObservers();
                         }
@@ -3339,19 +3363,17 @@
                             if (!_contentGlueElement) {
                                 _contentGlueElement = FRAMEWORK(generateDiv(_classNameContentGlueElement));
                                 _paddingElement.before(_contentGlueElement);
-                            }
-                            else {
+                            } else {
                                 _contentGlueElement.show();
                             }
                             if (_sizeAutoObserverAdded) {
                                 _sizeAutoObserverElement.show();
-                            }
-                            else {
+                            } else {
                                 _sizeAutoObserverElement = FRAMEWORK(generateDiv(_classNameSizeAutoObserverElement));
                                 _sizeAutoObserverElementNative = _sizeAutoObserverElement[0];
 
                                 _contentGlueElement.before(_sizeAutoObserverElement);
-                                var oldSize = { w: -1, h: -1 };
+                                var oldSize = {w: -1, h: -1};
                                 setupResizeObserver(_sizeAutoObserverElement, function () {
                                     var newSize = {
                                         w: _sizeAutoObserverElementNative[LEXICON.oW],
@@ -3360,8 +3382,7 @@
                                     if (checkCache(newSize, oldSize)) {
                                         if (_initialized && (_heightAutoCache && newSize.h > 0) || (_widthAutoCache && newSize.w > 0)) {
                                             update();
-                                        }
-                                        else if (_initialized && (!_heightAutoCache && newSize.h === 0) || (!_widthAutoCache && newSize.w === 0)) {
+                                        } else if (_initialized && (!_heightAutoCache && newSize.h === 0) || (!_widthAutoCache && newSize.w === 0)) {
                                             update();
                                         }
                                     }
@@ -3373,8 +3394,7 @@
                                 if (_cssCalc !== null)
                                     _sizeAutoObserverElement.css(_strHeight, _cssCalc + '(100% + 1px)');
                             }
-                        }
-                        else {
+                        } else {
                             if (_sizeAutoObserverAdded)
                                 _sizeAutoObserverElement.hide();
                             if (_contentGlueElement)
@@ -3556,8 +3576,7 @@
                                 setTopRightBottomLeft(textareaCSS, _strPaddingMinus);
                             else
                                 setTopRightBottomLeft(contentElementCSS, _strPaddingMinus);
-                        }
-                        else {
+                        } else {
                             setTopRightBottomLeft(paddingElementCSS, _strEmpty);
                             if (_isTextarea)
                                 setTopRightBottomLeft(textareaCSS, _strPaddingMinus, [padding.t, padding.r, padding.b, padding.l]);
@@ -3589,8 +3608,7 @@
                                 : _strEmpty);
                         */
                         contentElementCSS[_strHeight] = _strAuto;
-                    }
-                    else if (heightAutoChanged || paddingAbsoluteChanged) {
+                    } else if (heightAutoChanged || paddingAbsoluteChanged) {
                         contentElementCSS[_strMaxMinus + _strHeight] = _strEmpty;
                         contentElementCSS[_strHeight] = _strHundredPercent;
                     }
@@ -3604,8 +3622,7 @@
                         */
                         contentElementCSS[_strWidth] = _strAuto;
                         contentGlueElementCSS[_strMaxMinus + _strWidth] = _strHundredPercent; //IE Fix
-                    }
-                    else if (widthAutoChanged || paddingAbsoluteChanged) {
+                    } else if (widthAutoChanged || paddingAbsoluteChanged) {
                         contentElementCSS[_strMaxMinus + _strWidth] = _strEmpty;
                         contentElementCSS[_strWidth] = _strHundredPercent;
                         contentElementCSS[_strFloat] = _strEmpty;
@@ -3619,8 +3636,7 @@
 
                         contentElementCSS[_strWidth] = _strAuto;
                         contentElementCSS[_strFloat] = isRTLRight;
-                    }
-                    else {
+                    } else {
                         contentGlueElementCSS[_strWidth] = _strEmpty;
                     }
                     if (heightAuto) {
@@ -3628,8 +3644,7 @@
                             contentElementCSS[_strMaxMinus + _strHeight] = _strEmpty;
                         //textareaDynOrigSize.h || _contentElementNative[LEXICON.cH] :: use for anti scroll jumping
                         contentGlueElementCSS[_strHeight] = textareaDynOrigSize.h || _contentElementNative[LEXICON.cH];
-                    }
-                    else {
+                    } else {
                         contentGlueElementCSS[_strHeight] = _strEmpty;
                     }
                     if (sizeAutoCapable)
@@ -3650,7 +3665,7 @@
 
                         //Reset the viewport (very important for natively overlaid scrollbars and zoom change
                         //don't change the overflow prop as it is very expensive and affects performance !A LOT!
-                        if(!_nativeScrollbarStyling) {
+                        if (!_nativeScrollbarStyling) {
                             var viewportElementResetCSS = {};
                             var resetXTmp = _hasOverflowCache.y && _hideOverflowCache.ys && !ignoreOverlayScrollbarHiding ? (_nativeScrollbarIsOverlaid.y ? _viewportElement.css(isRTLLeft) : -_nativeScrollbarSize.y) : 0;
                             var resetBottomTmp = _hasOverflowCache.x && _hideOverflowCache.xs && !ignoreOverlayScrollbarHiding ? (_nativeScrollbarIsOverlaid.x ? _viewportElement.css(_strBottom) : -_nativeScrollbarSize.x) : 0;
@@ -3672,7 +3687,7 @@
                         };
 
                         //apply the correct viewport style and measure viewport size
-                        if(!_nativeScrollbarStyling) {
+                        if (!_nativeScrollbarStyling) {
                             viewportElementResetCSS[_strBottom] = wasHeightAuto ? _strEmpty : resetBottomTmp;
                             viewportElementResetCSS[isRTLLeft] = wasWidthAuto ? _strEmpty : resetXTmp;
                             _viewportElement.css(viewportElementResetCSS);
@@ -3839,11 +3854,10 @@
                                     if (_nativeScrollbarIsOverlaid[xy] && hasOverflow[xy] && hideOverflow[xy + 's']) {
                                         contentElementCSS[_strMarginMinus + strDirection] = invertedAutoSize ? (ignoreOverlayScrollbarHiding ? _strEmpty : _overlayScrollbarDummySize[xy]) : _strEmpty;
                                         contentElementCSS[_strBorderMinus + strDirection] = ((horizontal ? !invertedAutoSize : true) && !ignoreOverlayScrollbarHiding) ? (_overlayScrollbarDummySize[xy] + borderDesign) : _strEmpty;
-                                    }
-                                    else {
+                                    } else {
                                         arrangeContent[scrollbarVarsInverted._w_h] =
                                             contentElementCSS[_strMarginMinus + strDirection] =
-                                            contentElementCSS[_strBorderMinus + strDirection] = _strEmpty;
+                                                contentElementCSS[_strBorderMinus + strDirection] = _strEmpty;
                                         arrangeChanged = true;
                                     }
                                 };
@@ -3853,8 +3867,7 @@
                                         removeClass(_viewportElement, _classNameViewportNativeScrollbarsInvisible);
                                     else
                                         addClass(_viewportElement, _classNameViewportNativeScrollbarsInvisible);
-                                }
-                                else {
+                                } else {
                                     setContentElementCSS(true);
                                     setContentElementCSS(false);
                                 }
@@ -3896,8 +3909,7 @@
                                     viewportElementCSS[strOverflow + XY] = _strScroll;
                                     if (ignoreOverlayScrollbarHiding || _nativeScrollbarStyling) {
                                         reset();
-                                    }
-                                    else {
+                                    } else {
                                         viewportElementCSS[strDirection] = -(_nativeScrollbarIsOverlaid[xy] ? _overlayScrollbarDummySize[xy] : _nativeScrollbarSize[xy]);
                                         _contentBorderSize[scrollbarVarsInverted._w_h] = _nativeScrollbarIsOverlaid[xy] ? _overlayScrollbarDummySize[scrollbarVarsInverted._x_y] : 0;
                                     }
@@ -3909,7 +3921,7 @@
                             setViewportCSS(true);
                             setViewportCSS(false);
 
-                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible), 
+                            // if the scroll container is too small and if there is any overflow with no overlay scrollbar (and scrollbar styling isn't possible),
                             // make viewport element greater in size (Firefox hide Scrollbars fix)
                             // because firefox starts hiding scrollbars on too small elements
                             // with this behavior the overflow calculation may be incorrect or the scrollbars would appear suddenly
@@ -3922,12 +3934,11 @@
 
                                 viewportElementCSS[_strPaddingMinus + isRTLRight] = _nativeScrollbarMinSize.y;
                                 viewportElementCSS[_strMarginMinus + isRTLRight] = -_nativeScrollbarMinSize.y;
-                            }
-                            else {
+                            } else {
                                 viewportElementCSS[_strPaddingMinus + _strTop] =
                                     viewportElementCSS[_strMarginMinus + _strTop] =
-                                    viewportElementCSS[_strPaddingMinus + isRTLRight] =
-                                    viewportElementCSS[_strMarginMinus + isRTLRight] = _strEmpty;
+                                        viewportElementCSS[_strPaddingMinus + isRTLRight] =
+                                            viewportElementCSS[_strMarginMinus + isRTLRight] = _strEmpty;
                             }
                             viewportElementCSS[_strPaddingMinus + isRTLLeft] =
                                 viewportElementCSS[_strMarginMinus + isRTLLeft] = _strEmpty;
@@ -3939,8 +3950,7 @@
                                     paddingElementCSS[strOverflowX] =
                                         paddingElementCSS[strOverflowY] = strHidden;
                                 }
-                            }
-                            else {
+                            } else {
                                 if (!clipAlways || (overflowBehaviorIsVH.x || overflowBehaviorIsVS.x || overflowBehaviorIsVH.y || overflowBehaviorIsVS.y)) {
                                     //only un-hide if Textarea
                                     if (_isTextarea) {
@@ -3988,8 +3998,7 @@
 
                                 if (posLeftWithoutFloat !== posLeftWithFloat)
                                     contentElementCSS[_strLeft] = posLeftWithoutFloat;
-                            }
-                            else {
+                            } else {
                                 contentElementCSS[_strLeft] = _strEmpty;
                             }
                         }
@@ -4068,8 +4077,7 @@
                                 _classNameScrollbarCornerResizeV].join(_strSpace));
                             if (_resizeNone) {
                                 addClass(_hostElement, _classNameHostResizeDisabled);
-                            }
-                            else {
+                            } else {
                                 removeClass(_hostElement, _classNameHostResizeDisabled);
                                 addClass(_scrollbarCornerElement, _classNameScrollbarCornerResize);
                                 if (_resizeBoth)
@@ -4091,8 +4099,7 @@
                                         hideScrollbarV();
                                     }
                                 }
-                            }
-                            else if (scrollbarsVisibilityAuto) {
+                            } else if (scrollbarsVisibilityAuto) {
                                 if (canScroll.x)
                                     showScrollbarH();
                                 else
@@ -4102,12 +4109,10 @@
                                     showScrollbarV();
                                 else
                                     hideScrollbarV();
-                            }
-                            else if (scrollbarsVisibilityVisible) {
+                            } else if (scrollbarsVisibilityVisible) {
                                 showScrollbarH();
                                 showScrollbarV();
-                            }
-                            else if (scrollbarsVisibilityHidden) {
+                            } else if (scrollbarsVisibilityHidden) {
                                 hideScrollbarH();
                                 hideScrollbarV();
                             }
@@ -4118,8 +4123,7 @@
                             if (_scrollbarsAutoHideLeave || _scrollbarsAutoHideMove) {
                                 setupHostMouseTouchEvents(true);
                                 setupHostMouseTouchEvents();
-                            }
-                            else {
+                            } else {
                                 setupHostMouseTouchEvents(true);
                             }
 
@@ -4194,7 +4198,7 @@
                     //freezeResizeObserver(_sizeObserverElement, false);
                     //freezeResizeObserver(_sizeAutoObserverElement, false);
 
-                    dispatchCallback('onUpdated', { forced: force });
+                    dispatchCallback('onUpdated', {forced: force});
                 }
 
 
@@ -4265,7 +4269,7 @@
                     _sizeObserverElement = _sizeObserverElement || selectOrGenerateDivByClass(classNameResizeObserverHost);
                     _textareaCoverElement = _textareaCoverElement || (_isTextarea ? selectOrGenerateDivByClass(_classNameTextareaCoverElement) : undefined);
 
-                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes 
+                    //on destroy, remove all generated class names from the host element before collecting the adopted attributes
                     //to prevent adopting generated class names
                     if (destroy)
                         removeClass(_hostElement, hostElementClassNames);
@@ -4327,10 +4331,9 @@
                         _paddingElementNative = _paddingElement[0];
                         _viewportElementNative = _viewportElement[0];
                         _contentElementNative = _contentElement[0];
-                        
+
                         updateViewportAttrsFromTarget();
-                    }
-                    else {
+                    } else {
                         if (_domExists && _initialized) {
                             //clear size observer
                             _sizeObserverElement.children().remove();
@@ -4344,8 +4347,7 @@
 
                             //add classes to the host element which was removed previously to match the expected DOM
                             addClass(_hostElement, _isTextarea ? _classNameHostTextareaElement : _classNameHostElement);
-                        }
-                        else {
+                        } else {
                             //remove size observer
                             remove(_sizeObserverElement);
 
@@ -4394,6 +4396,7 @@
                         if (doClearInterval && _autoUpdateRecommended)
                             clearInterval(textareaUpdateIntervalID);
                     }
+
                     function textareaOnScroll(event) {
                         _targetElement[_strScrollLeft](_rtlScrollBehavior.i && _normalizeRTLCache ? 9999999 : 0);
                         _targetElement[_strScrollTop](0);
@@ -4401,22 +4404,26 @@
                         COMPATIBILITY.stpP(event);
                         return false;
                     }
+
                     function textareaOnDrop(event) {
                         setTimeout(function () {
                             if (!_destroyed)
                                 updateTextarea();
                         }, 50);
                     }
+
                     function textareaOnFocus() {
                         _textareaHasFocus = true;
                         addClass(_hostElement, strFocus);
                     }
+
                     function textareaOnFocusout() {
                         _textareaHasFocus = false;
                         textareaKeyDownKeyCodesList = [];
                         removeClass(_hostElement, strFocus);
                         updateTextarea(true);
                     }
+
                     function textareaOnKeyDown(event) {
                         var keyCode = event.keyCode;
 
@@ -4429,6 +4436,7 @@
                                 textareaKeyDownKeyCodesList.push(keyCode);
                         }
                     }
+
                     function textareaOnKeyUp(event) {
                         var keyCode = event.keyCode;
                         var index = inArray(keyCode, textareaKeyDownKeyCodesList);
@@ -4440,6 +4448,7 @@
                                 updateTextarea(true);
                         }
                     }
+
                     function contentOnTransitionEnd(event) {
                         if (_autoUpdateCache === true)
                             return;
@@ -4447,6 +4456,7 @@
                         if (isSizeAffectingCSSProperty(event.propertyName))
                             _base.update(_strAuto);
                     }
+
                     function viewportOnScroll(event) {
                         if (!_sleeping) {
                             if (scrollStopTimeoutId !== undefined)
@@ -4492,8 +4502,7 @@
                     if (_isTextarea) {
                         if (_msieVersion > 9 || !_autoUpdateRecommended) {
                             addDestroyEventListener(_targetElement, 'input', updateTextarea);
-                        }
-                        else {
+                        } else {
                             addDestroyEventListener(_targetElement,
                                 [_strKeyDownEvent, _strKeyUpEvent],
                                 [textareaOnKeyDown, textareaOnKeyUp]);
@@ -4502,8 +4511,7 @@
                         addDestroyEventListener(_targetElement,
                             [_strScroll, 'drop', strFocus, strFocus + 'out'],
                             [textareaOnScroll, textareaOnDrop, textareaOnFocus, textareaOnFocusout]);
-                    }
-                    else {
+                    } else {
                         addDestroyEventListener(_contentElement, _strTransitionEndEvent, contentOnTransitionEnd);
                     }
                     addDestroyEventListener(_viewportElement, _strScroll, viewportOnScroll, true);
@@ -4534,6 +4542,7 @@
                             _handle: handle
                         };
                     };
+
                     function resetScrollbarDOM(isHorizontal) {
                         var scrollbarVars = getScrollbarVars(isHorizontal);
                         var scrollbar = scrollbarVars._scrollbar;
@@ -4544,11 +4553,11 @@
                             each([scrollbar, track, handle], function (i, elm) {
                                 removeClass(elm.removeAttr(LEXICON.s), _classNamesDynamicDestroy);
                             });
-                        }
-                        else {
+                        } else {
                             remove(scrollbar || selectOrGenerateScrollbarDOM(isHorizontal)._scrollbar);
                         }
                     }
+
                     var horizontalElements;
                     var verticalElements;
 
@@ -4567,8 +4576,7 @@
                             _paddingElement.after(_scrollbarVerticalElement);
                             _paddingElement.after(_scrollbarHorizontalElement);
                         }
-                    }
-                    else {
+                    } else {
                         resetScrollbarDOM(true);
                         resetScrollbarDOM();
                     }
@@ -4597,28 +4605,35 @@
                     function getPointerPosition(event) {
                         return _msieVersion && insideIFrame ? event['screen' + XY] : COMPATIBILITY.page(event)[xy]; //use screen coordinates in EDGE & IE because the page values are incorrect in frames.
                     }
+
                     function getPreparedScrollbarsOption(name) {
                         return _currentPreparedOptions.scrollbars[name];
                     }
+
                     function increaseTrackScrollAmount() {
                         scrollDurationFactor = 0.5;
                     }
+
                     function decreaseTrackScrollAmount() {
                         scrollDurationFactor = 1;
                     }
+
                     function documentKeyDown(event) {
                         if (inArray(event.keyCode, increaseDecreaseScrollAmountKeyCodes) > -1)
                             increaseTrackScrollAmount();
                     }
+
                     function documentKeyUp(event) {
                         if (inArray(event.keyCode, increaseDecreaseScrollAmountKeyCodes) > -1)
                             decreaseTrackScrollAmount();
                     }
+
                     function onMouseTouchDownContinue(event) {
                         var originalEvent = event.originalEvent || event;
                         var isTouchEvent = originalEvent.touches !== undefined;
                         return _sleeping || _destroyed || nativeOverlayScrollbarsAreActive() || !_scrollbarsDragScrollingCache || (isTouchEvent && !getPreparedScrollbarsOption('touchSupport')) ? false : COMPATIBILITY.mBtn(event) === 1 || isTouchEvent;
                     }
+
                     function documentDragMove(event) {
                         if (onMouseTouchDownContinue(event)) {
                             var trackLength = scrollbarVarsInfo._trackLength;
@@ -4638,10 +4653,10 @@
 
                             if (!_supportPassiveEvents)
                                 COMPATIBILITY.prvD(event);
-                        }
-                        else
+                        } else
                             documentMouseTouchUp(event);
                     }
+
                     function documentMouseTouchUp(event) {
                         event = event || event.originalEvent;
 
@@ -4683,10 +4698,12 @@
                                 refreshScrollbarsAutoHide(false);
                         }
                     }
+
                     function onHandleMouseTouchDown(event) {
                         if (onMouseTouchDownContinue(event))
                             onHandleMouseTouchDownAction(event);
                     }
+
                     function onHandleMouseTouchDownAction(event) {
                         mouseDownScroll = _viewportElement[scroll]();
                         mouseDownScroll = isNaN(mouseDownScroll) ? 0 : mouseDownScroll;
@@ -4709,6 +4726,7 @@
                             COMPATIBILITY.prvD(event);
                         COMPATIBILITY.stpP(event);
                     }
+
                     function onTrackMouseTouchDown(event) {
                         if (onMouseTouchDownContinue(event)) {
                             var scrollDistance = MATH.round(_viewportSize[scrollbarVars._w_h]);
@@ -4773,11 +4791,9 @@
                                                 duration: 130,
                                                 complete: scrollActionInstantFinished
                                             }));
-                                        }
-                                        else
+                                        } else
                                             scrollActionInstantFinished();
-                                    }
-                                    else {
+                                    } else {
                                         decreaseScroll = isFirstIteration ? decreaseScrollCondition : decreaseScroll;
                                         finishedCondition = rtlIsNormal
                                             ? (decreaseScroll ? handleOffset + handleLength >= mouseOffset : handleOffset <= mouseOffset)
@@ -4788,8 +4804,7 @@
                                             _base.scrollStop();
                                             trackTimeout = undefined;
                                             scrollActionFinsished(true);
-                                        }
-                                        else {
+                                        } else {
                                             trackTimeout = setTimeout(scrollAction, timeoutDelay);
 
                                             scrollObj[xy] = (decreaseScroll ? '-=' : '+=') + scrollDistance;
@@ -4821,17 +4836,20 @@
                             COMPATIBILITY.stpP(event);
                         }
                     }
+
                     function onTrackMouseTouchEnter(event) {
                         //make sure both scrollbars will stay visible if one scrollbar is hovered if autoHide is "scroll" or "move".
                         _scrollbarsHandleHovered = true;
                         if (_scrollbarsAutoHideScroll || _scrollbarsAutoHideMove)
                             refreshScrollbarsAutoHide(true);
                     }
+
                     function onTrackMouseTouchLeave(event) {
                         _scrollbarsHandleHovered = false;
                         if (_scrollbarsAutoHideScroll || _scrollbarsAutoHideMove)
                             refreshScrollbarsAutoHide(false);
                     }
+
                     function onScrollbarMouseTouchDown(event) {
                         COMPATIBILITY.stpP(event);
                     }
@@ -4889,8 +4907,7 @@
                         removeClass(_scrollbarHorizontalElement, _classNameScrollbarAutoHidden);
                         //if(_hasOverflowCache.y && _hideOverflowCache.ys)
                         removeClass(_scrollbarVerticalElement, _classNameScrollbarAutoHidden);
-                    }
-                    else {
+                    } else {
                         var anyActive;
                         var strActive = 'active';
                         var hide = function () {
@@ -4988,8 +5005,7 @@
                         //apply or clear up transition
                         if (_supportTransition)
                             handleCSS[strTransition] = transition && MATH.abs(handleOffset - scrollbarVarsInfo._handleOffset) > 1 ? getCSSTransitionString(scrollbarVars._handle) + ', ' + (strTransform + _strSpace + transitionDuration + 'ms') : _strEmpty;
-                    }
-                    else
+                    } else
                         handleCSS[scrollbarVars._left_top] = handleOffset;
 
 
@@ -5062,12 +5078,10 @@
                         if (!_domExists) {
                             _hostElement.append(_scrollbarCornerElement);
                         }
-                    }
-                    else {
+                    } else {
                         if (_domExists && _initialized) {
                             removeClass(_scrollbarCornerElement.removeAttr(LEXICON.s), _classNamesDynamicDestroy);
-                        }
-                        else {
+                        } else {
                             remove(_scrollbarCornerElement);
                         }
                     }
@@ -5093,11 +5107,11 @@
                                 hostElementCSS[_strHeight] = (mouseDownSize.h + (pageOffset.y - mouseDownPosition.y) * mouseDownInvertedScale.y);
                             _hostElement.css(hostElementCSS);
                             COMPATIBILITY.stpP(event);
-                        }
-                        else {
+                        } else {
                             documentMouseTouchUp(event);
                         }
                     }
+
                     function documentMouseTouchUp(event) {
                         var eventIsTrusted = event !== undefined;
 
@@ -5117,13 +5131,18 @@
                         }
                         reconnectMutationObserver = false;
                     }
+
                     function onMouseTouchDownContinue(event) {
                         var originalEvent = event.originalEvent || event;
                         var isTouchEvent = originalEvent.touches !== undefined;
                         return _sleeping || _destroyed ? false : COMPATIBILITY.mBtn(event) === 1 || isTouchEvent;
                     }
+
                     function getCoordinates(event) {
-                        return _msieVersion && insideIFrame ? { x: event.screenX, y: event.screenY } : COMPATIBILITY.page(event);
+                        return _msieVersion && insideIFrame ? {
+                            x: event.screenX,
+                            y: event.screenY
+                        } : COMPATIBILITY.page(event);
                     }
 
                     addDestroyEventListener(_scrollbarCornerElement, _strMouseTouchDownEvent, function (event) {
@@ -5178,9 +5197,8 @@
                             if (type(ext.on) == TYPES.f)
                                 ext.on(extensionOnName, args);
                         });
-                    }
-                    else if (!_destroyed)
-                        _callbacksInitQeueue.push({ n: name, a: args });
+                    } else if (!_destroyed)
+                        _callbacksInitQeueue.push({n: name, a: args});
                 }
 
                 /**
@@ -5455,14 +5473,12 @@
                                 if (current[LEXICON.hOP](prop) && cache[LEXICON.hOP](prop)) {
                                     if (checkCache(current[prop], cache[prop]))
                                         return true;
-                                }
-                                else {
+                                } else {
                                     return true;
                                 }
                             }
                         }
-                    }
-                    else {
+                    } else {
                         return current !== cache;
                     }
                     return false;
@@ -5528,7 +5544,7 @@
                  * if "auto" then before a real update the content size and host element attributes gets checked, and if they changed only then the update method will be called.
                  * if "sync" then the async update process (MutationObserver or UpdateLoop) gets synchronized and a corresponding update takes place if one was needed due to pending changes.
                  * if "zoom" then a update takes place where it's assumed that content and host size changed
-                 * @returns {boolean|undefined} 
+                 * @returns {boolean|undefined}
                  * If force is "sync" then a boolean is returned which indicates whether a update was needed due to pending changes.
                  * If force is "auto" then a boolean is returned whether a update was needed due to attribute or size changes.
                  * undefined otherwise.
@@ -5545,7 +5561,7 @@
                     var doUpdateAuto;
                     var mutHost;
                     var mutContent;
-                    
+
                     if (isString) {
                         if (force === _strAuto) {
                             attrsChanged = meaningfulAttrsChanged();
@@ -5557,28 +5573,24 @@
                                     _changedOptions: _initialized ? undefined : _currentPreparedOptions
                                 });
                             }
-                        }
-                        else if (force === _strSync) {
+                        } else if (force === _strSync) {
                             if (_mutationObserversConnected) {
                                 mutHost = _mutationObserverHostCallback(_mutationObserverHost.takeRecords());
                                 mutContent = _mutationObserverContentCallback(_mutationObserverContent.takeRecords());
-                            }
-                            else {
+                            } else {
                                 mutHost = _base.update(_strAuto);
                             }
-                        }
-                        else if (force === 'zoom') {
+                        } else if (force === 'zoom') {
                             update({
                                 _hostSizeChanged: true,
                                 _contentSizeChanged: true
                             });
                         }
-                    }
-                    else {
+                    } else {
                         force = _sleeping || force;
                         _sleeping = false;
                         if (!_base.update(_strSync) || force)
-                            update({ _force: force });
+                            update({_force: force});
                     }
                     if (!_isTextarea) {
                         _contentElement.find(imgElementSelector).each(function (i, el) {
@@ -5606,19 +5618,16 @@
                             if (arguments.length > 1) {
                                 setObjectPropVal(option, newOptions, value);
                                 changedOps = setOptions(option);
-                            }
-                            else
+                            } else
                                 return getObjectPropVal(_currentOptions, newOptions);
-                        }
-                        else
+                        } else
                             return _currentOptions;
-                    }
-                    else {
+                    } else {
                         changedOps = setOptions(newOptions);
                     }
 
                     if (!FRAMEWORK.isEmptyObject(changedOps)) {
-                        update({ _changedOptions: changedOps });
+                        update({_changedOptions: changedOps});
                     }
                 };
 
@@ -5846,6 +5855,7 @@
                         updateScrollbarInfos();
                         completeCallback();
                     };
+
                     function checkSettingsStringValue(currValue, allowedValues) {
                         for (i = 0; i < allowedValues[strLength]; i++) {
                             if (currValue === allowedValues[i])
@@ -5853,6 +5863,7 @@
                         }
                         return false;
                     }
+
                     function getRawScroll(isX, coordinates) {
                         var coordinateProps = isX ? coordinatesXAxisProps : coordinatesYAxisProps;
                         coordinates = type(coordinates) == TYPES.s || type(coordinates) == TYPES.n ? [coordinates, coordinates] : coordinates;
@@ -5861,12 +5872,13 @@
                             return isX ? coordinates[0] : coordinates[1];
                         else if (type(coordinates) == TYPES.o) {
                             //decides RTL normalization "hack" with .n
-                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL; 
+                            //normalizeRTL = type(coordinates.n) == TYPES.b ? coordinates.n : normalizeRTL;
                             for (i = 0; i < coordinateProps[strLength]; i++)
                                 if (coordinateProps[i] in coordinates)
                                     return coordinates[coordinateProps[i]];
                         }
                     }
+
                     function getFinalScroll(isX, rawScroll) {
                         var isString = type(rawScroll) == TYPES.s;
                         var operator;
@@ -5892,17 +5904,16 @@
                             //calculate units and shortcuts
                             rawScroll = operator ? rawScroll.substr(2) : rawScroll;
                             rawScroll = rawScroll
-                            [strReplace](/min/g, 0) //'min' = 0%
-                            [strReplace](/</g, 0)   //'<'   = 0%
-                            [strReplace](/max/g, (normalizeShortcuts ? '-' : _strEmpty) + _strHundredPercent)    //'max' = 100%
-                            [strReplace](/>/g, (normalizeShortcuts ? '-' : _strEmpty) + _strHundredPercent)      //'>'   = 100%
-                            [strReplace](/px/g, _strEmpty)
-                            [strReplace](/%/g, mult + (maxScroll * (isRTLisX && _rtlScrollBehavior.n ? -1 : 1) / 100.0))
-                            [strReplace](/vw/g, mult + _viewportSize.w)
-                            [strReplace](/vh/g, mult + _viewportSize.h);
+                                [strReplace](/min/g, 0) //'min' = 0%
+                                [strReplace](/</g, 0)   //'<'   = 0%
+                                [strReplace](/max/g, (normalizeShortcuts ? '-' : _strEmpty) + _strHundredPercent)    //'max' = 100%
+                                [strReplace](/>/g, (normalizeShortcuts ? '-' : _strEmpty) + _strHundredPercent)      //'>'   = 100%
+                                [strReplace](/px/g, _strEmpty)
+                                [strReplace](/%/g, mult + (maxScroll * (isRTLisX && _rtlScrollBehavior.n ? -1 : 1) / 100.0))
+                                [strReplace](/vw/g, mult + _viewportSize.w)
+                                [strReplace](/vh/g, mult + _viewportSize.h);
                             amount = parseToZeroOrNumber(isNaN(rawScroll) ? parseToZeroOrNumber(evalFunc(rawScroll), true).toFixed() : rawScroll);
-                        }
-                        else {
+                        } else {
                             amount = rawScroll;
                         }
 
@@ -5935,6 +5946,7 @@
                         }
                         return finalValue === currScroll ? undefined : finalValue;
                     }
+
                     function getPerAxisValue(value, valueInternalType, defaultValue, allowedValues) {
                         var resultDefault = [defaultValue, defaultValue];
                         var valueType = type(value);
@@ -5944,8 +5956,7 @@
                         //value can be [ string, or array of two strings ]
                         if (valueType == valueInternalType) {
                             value = [value, value];
-                        }
-                        else if (valueType == TYPES.a) {
+                        } else if (valueType == TYPES.a) {
                             valueArrLength = value[strLength];
                             if (valueArrLength > 2 || valueArrLength < 1)
                                 value = resultDefault;
@@ -5960,13 +5971,13 @@
                                     }
                                 }
                             }
-                        }
-                        else if (valueType == TYPES.o)
+                        } else if (valueType == TYPES.o)
                             value = [value[_strX] || defaultValue, value[_strY] || defaultValue];
                         else
                             value = resultDefault;
-                        return { x: value[0], y: value[1] };
+                        return {x: value[0], y: value[1]};
                     }
+
                     function generateMargin(marginTopRightBottomLeftArray) {
                         var result = [];
                         var currValue;
@@ -6008,8 +6019,7 @@
                                     margin = generateMargin(margin);
                                 else
                                     margin = marginDefault;
-                            }
-                            else if (marginType == TYPES.o)
+                            } else if (marginType == TYPES.o)
                                 margin = generateMargin([margin[_strTop], margin[_strRight], margin[_strBottom], margin[_strLeft]]);
                             else
                                 margin = marginDefault;
@@ -6113,8 +6123,7 @@
                         if (durationIsObject) {
                             duration.complete = proxyCompleteCallback;
                             _viewportElement.animate(finalScroll, duration);
-                        }
-                        else {
+                        } else {
                             animationOptions = {
                                 duration: duration,
                                 complete: proxyCompleteCallback
@@ -6123,14 +6132,12 @@
                                 specialEasing[_strScrollLeft] = easing[0] || easing.x;
                                 specialEasing[_strScrollTop] = easing[1] || easing.y;
                                 animationOptions.specialEasing = specialEasing;
-                            }
-                            else {
+                            } else {
                                 animationOptions.easing = easing;
                             }
                             _viewportElement.animate(finalScroll, animationOptions);
                         }
-                    }
-                    else {
+                    } else {
                         if (doScrollLeft)
                             _viewportElement[_strScrollLeft](finalScroll[_strScrollLeft]);
                         if (doScrollTop)
@@ -6229,8 +6236,7 @@
                             for (; i < privateMethods.length; i++)
                                 delete result[privateMethods[i]];
                         }
-                    }
-                    else {
+                    } else {
                         result = {};
                         for (i in _extensions)
                             result[i] = extendDeep({}, _base.ext(i));
@@ -6273,11 +6279,9 @@
                                     return _base.ext(extName);
                                 }
                             }
-                        }
-                        else
+                        } else
                             return _base.ext(extName);
-                    }
-                    else
+                    } else
                         console.warn("A extension with the name \"" + extName + "\" isn't registered.");
                 };
 
@@ -6343,7 +6347,7 @@
                     /* On a div Element The if checks only whether:
                      * - the targetElement has the class "os-host"
                      * - the targetElement has a a child with the class "os-padding"
-                     * 
+                     *
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-host" element is the targetElement)
                      *
@@ -6368,11 +6372,11 @@
                      *  </div>
                      *
                      * =====================================================================================
-                     * 
+                     *
                      * On a Textarea Element The if checks only whether:
-                     * - the targetElement has the class "os-textarea" 
-                     * - the targetElement is inside a element with the class "os-content" 
-                     * 
+                     * - the targetElement has the class "os-textarea"
+                     * - the targetElement is inside a element with the class "os-content"
+                     *
                      * If that's the case, its assumed the DOM has already the following structure:
                      * (The ".os-textarea" (textarea) element is the targetElement)
                      *
@@ -6441,8 +6445,8 @@
                     setupStructureEvents();
                     setupScrollbarEvents(true);
                     setupScrollbarEvents(false);
-                    setupScrollbarCornerEvents();   
-                    
+                    setupScrollbarCornerEvents();
+
                     //create mutation observers
                     createMutationObservers();
 
@@ -6475,16 +6479,22 @@
                     dispatchCallback('onInitialized');
 
                     //call all callbacks which would fire before the initialized was complete
-                    each(_callbacksInitQeueue, function (index, value) { dispatchCallback(value.n, value.a); });
+                    each(_callbacksInitQeueue, function (index, value) {
+                        dispatchCallback(value.n, value.a);
+                    });
                     _callbacksInitQeueue = [];
 
                     //add extensions
                     if (type(extensions) == TYPES.s)
                         extensions = [extensions];
                     if (COMPATIBILITY.isA(extensions))
-                        each(extensions, function (index, value) { _base.addExt(value); });
+                        each(extensions, function (index, value) {
+                            _base.addExt(value);
+                        });
                     else if (FRAMEWORK.isPlainObject(extensions))
-                        each(extensions, function (key, value) { _base.addExt(key, value); });
+                        each(extensions, function (key, value) {
+                            _base.addExt(key, value);
+                        });
 
                     //add the transition class for transitions AFTER the first update & AFTER the applied extensions (for preventing unwanted transitions)
                     setTimeout(function () {
@@ -6539,8 +6549,7 @@
                             if (inst !== undefined)
                                 arr.push(OverlayScrollbarsInstance(inst, options, extensions, _pluginsGlobals, _pluginsAutoUpdateLoop));
                         });
-                    }
-                    else {
+                    } else {
                         FRAMEWORK.each(pluginTargetElements, function (i, v) {
                             inst = INSTANCES(v);
                             if ((options === '!' && _plugin.valid(inst)) || (COMPATIBILITY.type(options) == TYPES.f && options(v, inst)))
@@ -6604,9 +6613,8 @@
                 var i = 0;
                 if (argLen < 1 || !extNameTypeString) {
                     //return a copy of all extension objects
-                    return FRAMEWORK.extend(true, { length: _pluginsExtensions[LEXICON.l] }, _pluginsExtensions);
-                }
-                else if (extNameTypeString) {
+                    return FRAMEWORK.extend(true, {length: _pluginsExtensions[LEXICON.l]}, _pluginsExtensions);
+                } else if (extNameTypeString) {
                     if (COMPATIBILITY.type(extension) == TYPES.f) {
                         //register extension
                         _pluginsExtensions.push({
@@ -6614,8 +6622,7 @@
                             extensionFactory: extension,
                             defaultOptions: defaultOptions
                         });
-                    }
-                    else {
+                    } else {
                         for (; i < _pluginsExtensions[LEXICON.l]; i++) {
                             if (_pluginsExtensions[i].name === extensionName) {
                                 if (argLen > 1)
@@ -6641,10 +6648,11 @@
             JQUERY.fn.overlayScrollbars = function (options, extensions) {
                 var _elements = this;
                 if (JQUERY.isPlainObject(options)) {
-                    JQUERY.each(_elements, function () { PLUGIN(this, options, extensions); });
+                    JQUERY.each(_elements, function () {
+                        PLUGIN(this, options, extensions);
+                    });
                     return _elements;
-                }
-                else
+                } else
                     return PLUGIN(_elements, options);
             };
         }

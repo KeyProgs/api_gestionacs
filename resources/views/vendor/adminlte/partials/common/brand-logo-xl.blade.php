@@ -9,10 +9,10 @@
 @endif
 
 <a href="{{ $dashboard_url }}"
-    @if($layoutHelper->isLayoutTopnavEnabled())
-        class="navbar-brand logo-switch"
-    @else
-        class="brand-link logo-switch"
+   @if($layoutHelper->isLayoutTopnavEnabled())
+   class="navbar-brand logo-switch"
+   @else
+   class="brand-link logo-switch"
     @endif>
 
     {{-- Small brand logo --}}

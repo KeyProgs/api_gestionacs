@@ -15,7 +15,7 @@ class VoitureAddColsAssureur extends Migration
     {
         Schema::table('voitures', function (Blueprint $table) {
             //
-            $table->string('assureur',50)->nullable();
+            $table->string('assureur', 50)->nullable();
         });
     }
 

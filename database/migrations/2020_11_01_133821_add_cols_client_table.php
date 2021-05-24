@@ -14,10 +14,10 @@ class AddColsClientTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->char('rue',20)->nullable()->after('adresse');
-            $table->char('typevoie',20)->nullable()->after('adresse');
-            $table->char('nomvoie',20)->nullable()->after('adresse');
-            $table->char('activite_id',20)->nullable()->after('prenom');
+            $table->char('rue', 20)->nullable()->after('adresse');
+            $table->char('typevoie', 20)->nullable()->after('adresse');
+            $table->char('nomvoie', 20)->nullable()->after('adresse');
+            $table->char('activite_id', 20)->nullable()->after('prenom');
 
 
         });

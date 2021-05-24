@@ -30,7 +30,7 @@ class SinistreController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +41,7 @@ class SinistreController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sinistre  $sinistre
+     * @param \App\Models\Sinistre $sinistre
      * @return \Illuminate\Http\Response
      */
     public function show(Sinistre $sinistre)
@@ -52,7 +52,7 @@ class SinistreController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sinistre  $sinistre
+     * @param \App\Models\Sinistre $sinistre
      * @return \Illuminate\Http\Response
      */
     public function edit(Sinistre $sinistre)
@@ -63,8 +63,8 @@ class SinistreController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sinistre  $sinistre
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Sinistre $sinistre
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Sinistre $sinistre)
@@ -75,7 +75,7 @@ class SinistreController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sinistre  $sinistre
+     * @param \App\Models\Sinistre $sinistre
      * @return \Illuminate\Http\Response
      */
     public function destroy(Sinistre $sinistre)

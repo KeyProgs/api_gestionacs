@@ -34,13 +34,10 @@ class CreateVoituresTable extends Migration
             $table->integer('assureur_resiliation')->nullable();
 
 
-
             $table->char('station_cp_n', 8)->nullable();
             $table->char('station_ville_n', 30)->nullable();
             $table->char('station_cp_j', 8)->nullable();
             $table->char('station_ville_j', 30)->nullable();
-
-
 
 
             $table->timestamps();

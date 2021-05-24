@@ -13,63 +13,64 @@
 // }
 
 
-function GetById(id ){
-    if (document.getElementById(id))  return document.getElementById(id).value ? document.getElementById(id).value : null
+function GetById(id) {
+    if (document.getElementById(id)) return document.getElementById(id).value ? document.getElementById(id).value : null
 }
-if(document.getElementById('station_cp_n')){
 
-let setData={
-    'civilite':GetById('civilite'),
-    'name':GetById('nom'),
-    'prenom':GetById('prenom'),
-    'dn':GetById('dn'),
-    'rue':GetById('rue'),
-    'typevoie':GetById('typevoie'),
-    'nomvoie':GetById('nomvoie'),
-    'cp':GetById('cp'), ////////////////////////////////
-    'ville':GetById('ville'),
-    'activite_id':GetById('activite_id'),
-    'email':GetById('email'),
-    'indicatif':GetById('indicatif'),
-    'portable':GetById('portable'),
-    'fixe':GetById('fixe'),
-    'adresse':GetById('adresse'),
+if (document.getElementById('station_cp_n')) {
+
+    let setData = {
+        'civilite': GetById('civilite'),
+        'name': GetById('nom'),
+        'prenom': GetById('prenom'),
+        'dn': GetById('dn'),
+        'rue': GetById('rue'),
+        'typevoie': GetById('typevoie'),
+        'nomvoie': GetById('nomvoie'),
+        'cp': GetById('cp'), ////////////////////////////////
+        'ville': GetById('ville'),
+        'activite_id': GetById('activite_id'),
+        'email': GetById('email'),
+        'indicatif': GetById('indicatif'),
+        'portable': GetById('portable'),
+        'fixe': GetById('fixe'),
+        'adresse': GetById('adresse'),
 
 
-    'matricule':GetById('matricule'),
-    'sitfam_id':GetById('sitfam_id'),
-    'financement_id':GetById('financement_id'),
-    'usage_id':GetById('usage_id'),
-    'station_cp_n':GetById('station_cp_n'),
-    'station_ville_n':GetById('station_ville_n'),
-    'station_cp_j':GetById('station_cp_j'),
-    'station_ville_j':GetById('station_ville_j'),
-    'km_range':GetById('km_range'),
-    'titulairecartegrise':GetById('titulairecartegrise'),
-    'typepermis':GetById('typepermis'),
-    'dop':GetById('dop'),
-    'etat_assurance':GetById('etat_assurance'),
-    'usage':GetById('usage'),
-    'station_id':GetById('station_id'),
-    'date_acqui':GetById('date_acqui'),
-    'date_contrat':GetById('date_contrat'),
-    'last3y_assure':GetById('last3y_assure'),
-    'last3y_interruption':GetById('last3y_interruption'),
-    'assureur_resiliation':GetById('assureur_resiliation'),
+        'matricule': GetById('matricule'),
+        'sitfam_id': GetById('sitfam_id'),
+        'financement_id': GetById('financement_id'),
+        'usage_id': GetById('usage_id'),
+        'station_cp_n': GetById('station_cp_n'),
+        'station_ville_n': GetById('station_ville_n'),
+        'station_cp_j': GetById('station_cp_j'),
+        'station_ville_j': GetById('station_ville_j'),
+        'km_range': GetById('km_range'),
+        'titulairecartegrise': GetById('titulairecartegrise'),
+        'typepermis': GetById('typepermis'),
+        'dop': GetById('dop'),
+        'etat_assurance': GetById('etat_assurance'),
+        'usage': GetById('usage'),
+        'station_id': GetById('station_id'),
+        'date_acqui': GetById('date_acqui'),
+        'date_contrat': GetById('date_contrat'),
+        'last3y_assure': GetById('last3y_assure'),
+        'last3y_interruption': GetById('last3y_interruption'),
+        'assureur_resiliation': GetById('assureur_resiliation'),
 
-    'nb_sinistres':GetById('nb_sinistres')
+        'nb_sinistres': GetById('nb_sinistres')
 
-}
+    }
 
 /////////sinistres
     sinistres = null;
-    setData['sinistres']={};
-    var i=0;
-    for (i=1;i<=GetById('nb_sinistres');i++){
-        sinistre_date = "sinistre_date_"+i;
-        sinistre_id = "sinistre_id_"+i;
-        setData[sinistre_date]= GetById(sinistre_date);
-        setData[sinistre_id]= GetById(sinistre_id);
+    setData['sinistres'] = {};
+    var i = 0;
+    for (i = 1; i <= GetById('nb_sinistres'); i++) {
+        sinistre_date = "sinistre_date_" + i;
+        sinistre_id = "sinistre_id_" + i;
+        setData[sinistre_date] = GetById(sinistre_date);
+        setData[sinistre_id] = GetById(sinistre_id);
         sinistre = {
             [sinistre_date]: GetById(sinistre_date),
             [sinistre_id]: GetById(sinistre_id)
@@ -82,16 +83,14 @@ let setData={
     }
 
 
-
-
-chrome.storage.sync.set({"setData":setData});
+    chrome.storage.sync.set({"setData": setData});
 // alert (setData.name + " Tarification Disponible !");
-console.log (setData.name + " Tarification Disponible !");
+    console.log(setData.name + " Tarification Disponible !");
     console.log("setData.js");
     console.log(setData);
 }
 
-var setData__=null;
+var setData__ = null;
 
 
 

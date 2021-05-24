@@ -14,7 +14,7 @@ class AddCiviliteClientTable extends Migration
     public function up()
     {
         Schema::table('clients', function (Blueprint $table) {
-            $table->char('civilite',8)->after('id');
+            $table->char('civilite', 8)->after('id');
         });
     }
 

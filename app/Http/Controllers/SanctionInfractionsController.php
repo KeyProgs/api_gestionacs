@@ -30,7 +30,7 @@ class SanctionInfractionsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +41,7 @@ class SanctionInfractionsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Sanction_Infractions  $sanction_Infractions
+     * @param \App\Models\Sanction_Infractions $sanction_Infractions
      * @return \Illuminate\Http\Response
      */
     public function show(Sanction_Infractions $sanction_Infractions)
@@ -52,7 +52,7 @@ class SanctionInfractionsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Sanction_Infractions  $sanction_Infractions
+     * @param \App\Models\Sanction_Infractions $sanction_Infractions
      * @return \Illuminate\Http\Response
      */
     public function edit(Sanction_Infractions $sanction_Infractions)
@@ -63,8 +63,8 @@ class SanctionInfractionsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Sanction_Infractions  $sanction_Infractions
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Sanction_Infractions $sanction_Infractions
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Sanction_Infractions $sanction_Infractions)
@@ -75,7 +75,7 @@ class SanctionInfractionsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sanction_Infractions  $sanction_Infractions
+     * @param \App\Models\Sanction_Infractions $sanction_Infractions
      * @return \Illuminate\Http\Response
      */
     public function destroy(Sanction_Infractions $sanction_Infractions)

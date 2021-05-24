@@ -239,53 +239,53 @@ return [
         ],
         [
             'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'url' => 'admin/blog',
+            'can' => 'manage-blog',
         ],
         [
-            'text'        => 'Notifications',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 5,
+            'text' => 'Notifications',
+            'url' => 'admin/pages',
+            'icon' => 'far fa-fw fa-file',
+            'label' => 5,
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
-            'url'  => 'dashboard',
+            'url' => 'dashboard',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => 'multilevel',
+            'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [
                     'text' => 'Taches',
-                    'url'  => '/taches',
+                    'url' => '/taches',
                 ],
                 [
                     'text' => 'clientsgestion',
-                    'url'  => '#',
+                    'url' => '#',
                     'submenu' => [
                         [
                             'text' => 'clientslist',
-                            'url'  => '/clientslist',
+                            'url' => '/clientslist',
                         ],
                         [
                             'text' => 'clientadd',
-                            'url'  => '/client/add',
+                            'url' => '/client/add',
                         ],
                         [
-                            'text'    => 'assurances',
-                            'url'     => '#',
+                            'text' => 'assurances',
+                            'url' => '#',
                             'submenu' => [
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                                 [
                                     'text' => 'level_three',
-                                    'url'  => '#',
+                                    'url' => '#',
                                 ],
                             ],
                         ],
@@ -293,27 +293,27 @@ return [
                 ],
                 [
                     'text' => 'level_one',
-                    'url'  => '#',
+                    'url' => '#',
                     'submenu' => [
                         'text' => 'change_password',
-                        'url'  => 'dashboard',
+                        'url' => 'dashboard',
                     ]
                 ],
             ],
         ],
         ['header' => 'labels'],
         [
-            'text'       => 'important',
+            'text' => 'important',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url' => '#',
         ],
         [
-            'text'       => 'Telecharger Extension',
+            'text' => 'Telecharger Extension',
             'icon_color' => 'yellow',
-            'url'        => '/files/extension_tarif.rar',
+            'url' => '/files/extension_tarif.rar',
         ],
         [
-            'text'       => 'information',
+            'text' => 'information',
             'icon_color' => 'cyan',
 
         ],

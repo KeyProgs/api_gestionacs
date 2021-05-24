@@ -33,7 +33,7 @@
         {{-- User menu header --}}
         @if(!View::hasSection('usermenu_header') && config('adminlte.usermenu_header'))
             <li class="user-header {{ config('adminlte.usermenu_header_class', 'bg-primary') }}
-                @if(!config('adminlte.usermenu_image')) h-auto @endif">
+            @if(!config('adminlte.usermenu_image')) h-auto @endif">
                 @if(config('adminlte.usermenu_image'))
                     <img src="{{ Auth::user()->adminlte_image() }}"
                          class="img-circle elevation-2"
@@ -79,6 +79,9 @@
                 @endif
                 {{ csrf_field() }}
             </form>
+
+            @include('users.pointeuse.pointeuse')
+
         </li>
 
     </ul>

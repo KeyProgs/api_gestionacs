@@ -15,7 +15,7 @@ class ActionEtatsAddColor extends Migration
     {
         Schema::table('action_etats', function (Blueprint $table) {
             //
-            $table->string('color',20)->nullable()->after('titre')->default('badge-danger');
+            $table->string('color', 20)->nullable()->after('titre')->default('badge-danger');
 
         });
     }

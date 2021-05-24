@@ -61,9 +61,9 @@
 
         {{-- Password error alert --}}
         @error('password')
-            <div class="lockscreen-subitem text-center" role="alert">
-                <b class="text-danger">{{ $message }}</b>
-            </div>
+        <div class="lockscreen-subitem text-center" role="alert">
+            <b class="text-danger">{{ $message }}</b>
+        </div>
         @enderror
 
         {{-- Help block --}}

@@ -16,7 +16,6 @@ class AssuranceController extends Controller
     {
 
 
-
     }
 //DE531001100126236834-DE53100110012623683475
 //NTSBDEB1XXX
@@ -35,7 +34,7 @@ class AssuranceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      *
      */
@@ -47,7 +46,7 @@ class AssuranceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Assurance  $assurance
+     * @param \App\Models\Assurance $assurance
      * @return \Illuminate\Http\Response
      */
     public function show(Assurance $assurance)
@@ -58,7 +57,7 @@ class AssuranceController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Assurance  $assurance
+     * @param \App\Models\Assurance $assurance
      * @return \Illuminate\Http\Response
      */
     public function edit(Assurance $assurance)
@@ -69,8 +68,8 @@ class AssuranceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Assurance  $assurance
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Assurance $assurance
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Assurance $assurance)
@@ -81,7 +80,7 @@ class AssuranceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Assurance  $assurance
+     * @param \App\Models\Assurance $assurance
      * @return \Illuminate\Http\Response
      */
     public function destroy(Assurance $assurance)

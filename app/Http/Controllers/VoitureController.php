@@ -30,7 +30,7 @@ class VoitureController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +41,7 @@ class VoitureController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Voiture  $voiture
+     * @param \App\Models\Voiture $voiture
      * @return \Illuminate\Http\Response
      */
     public function show(Voiture $voiture)
@@ -52,7 +52,7 @@ class VoitureController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Voiture  $voiture
+     * @param \App\Models\Voiture $voiture
      * @return \Illuminate\Http\Response
      */
     public function edit(Voiture $voiture)
@@ -63,8 +63,8 @@ class VoitureController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Voiture  $voiture
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Voiture $voiture
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Voiture $voiture)
@@ -75,7 +75,7 @@ class VoitureController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Voiture  $voiture
+     * @param \App\Models\Voiture $voiture
      * @return \Illuminate\Http\Response
      */
     public function destroy(Voiture $voiture)

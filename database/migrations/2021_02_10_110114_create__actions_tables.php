@@ -15,7 +15,7 @@ class CreateActionsTables extends Migration
     {
         Schema::create('actions', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->string('titre',99)->nullable();
+            $table->string('titre', 99)->nullable();
             $table->date('dd')->nullable();
             $table->date('df')->nullable();
 
@@ -27,7 +27,6 @@ class CreateActionsTables extends Migration
 
             $table->unsignedBigInteger('id_action_type');
             $table->foreign('id_action_type')->references('id')->on('action_types');
-
 
 
             $table->timestamps();

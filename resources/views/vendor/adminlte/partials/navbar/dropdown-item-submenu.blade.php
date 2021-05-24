@@ -2,7 +2,7 @@
 
     {{-- Menu toggler --}}
     <a class="dropdown-item dropdown-toggle" href="" data-toggle="dropdown"
-       {!! $item['data-compiled'] ?? '' !!}>
+        {!! $item['data-compiled'] ?? '' !!}>
 
         {{-- Icon (optional) --}}
         @if(isset($item['icon']))

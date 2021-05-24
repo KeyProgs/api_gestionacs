@@ -60,12 +60,24 @@ class User extends Authenticatable
 
     public function files()
     {
-        return $this->hasMany(File::class);
+           return $this->hasMany(File::class);
     }
 
     public function uploads()
     {
         return $this->hasMany(Upload::class);
+    }
+
+    public function lastPointeuse(){
+        if (pointeuse::where('user_id', $this->id)->latest()->first())
+            return pointeuse::where('user_id', $this->id)->latest()->first() ;
+        $action=new \stdClass();
+        $action->action=0;
+        return $action;
+    }
+    public function pointeuses(){
+        return $this->hasMany(pointeuse::class);
+
     }
 
 }

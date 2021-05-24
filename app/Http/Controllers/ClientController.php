@@ -8,7 +8,6 @@ use App\Models\Action_types;
 use App\Models\Client;
 use App\Models\Infraction;
 use App\Models\Sanction;
-use App\Models\Sanction_Infractions;
 use App\Models\Sinistre;
 use App\Models\User;
 use App\Models\Voiture;
@@ -16,7 +15,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
-use function GuzzleHttp\Promise\all;
 
 class ClientController extends Controller
 {
@@ -31,27 +29,29 @@ class ClientController extends Controller
         //
     }
 
-    public function taches(){
+    public function taches()
+    {
         $actions = Action::where('responsable', Auth::user()->id)
             ->orWhere('rapporteur', Auth::user()->id)
             ->paginate(10);
-        $users=User::all();
-        $Action_etats=Action_etat::all();
-        $action_types=Action_types::all();
+        $users = User::all();
+        $Action_etats = Action_etat::all();
+        $action_types = Action_types::all();
 
-        return view('clients.actions.actions', ['actions' => $actions,'users' => $users,'Action_etats' => $Action_etats,'action_types' => $action_types]);
+        return view('clients.actions.actions', ['actions' => $actions, 'users' => $users, 'Action_etats' => $Action_etats, 'action_types' => $action_types]);
 
     }
 
-    public function addAction(Request $request){
+    public function addAction(Request $request)
+    {
         $action = new Action();
         $action->titre = $request->input('titre');;
-        $action->dd = $request->input('dd');;
-        $action->df = $request->input('df');;
-        $action->responsable = (int) $request->input('responsable');
+        $action->dd = $request->input('dd');
+        $action->df = $request->input('df');
+        $action->responsable = (int)$request->input('responsable');
         $action->rapporteur = Auth::user()->id;
-        $action->description=$request->description;
-        $action->id_action_type=$request->id_action_type;
+        $action->description = $request->description;
+        $action->id_action_type = $request->id_action_type;
 
 //        dd($action);
         $action->save();
@@ -60,7 +60,8 @@ class ClientController extends Controller
 //        {{ url()->previous() }}
     }
 
-    public function changeActionEtat(Request $request){
+    public function changeActionEtat(Request $request)
+    {
         if ($request->ajax()) {
 //            $this->validate($request, [
 //                'email' => 'bail|required|email',
@@ -72,10 +73,12 @@ class ClientController extends Controller
             $action->id_action_etat = $request->etat_id;
 
             $action->save();
-            return (Action_etat::find($action->id_action_etat)->color );
+            return (Action_etat::find($action->id_action_etat)->color);
         }
     }
-    public function changeReponsable(Request $request){
+
+    public function changeReponsable(Request $request)
+    {
         if ($request->ajax()) {
 //            $this->validate($request, [
 //                'email' => 'bail|required|email',
@@ -173,7 +176,7 @@ class ClientController extends Controller
 
     public function sanctionsAdd(Request $request)
     {
-dd($request->all());
+        dd($request->all());
 
         $sanction = new Sanction();
         $sanction->client_id = $request->client_id;
@@ -186,7 +189,7 @@ dd($request->all());
 
 //        {{ url()->previous() }}
         $sanction->save();
-        foreach (Infraction::all() as $infraction) $request->has("infractionIthem_".$infraction->id)?$sanction->infractions()->attach($infraction->id) : "";
+        foreach (Infraction::all() as $infraction) $request->has("infractionIthem_" . $infraction->id) ? $sanction->infractions()->attach($infraction->id) : "";
 
 //        dd($sanction);
 
@@ -237,7 +240,7 @@ dd($request->all());
 
         }
         $sinistres = [];
-        return view('clients.client', ['client' => $client, 'voiture' => $voiture, 'sinistres' => $sinistres , 'infractions' => null]);
+        return view('clients.client', ['client' => $client, 'voiture' => $voiture, 'sinistres' => $sinistres, 'infractions' => null]);
 
 
     }
