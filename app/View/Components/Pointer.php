@@ -1,7 +1,7 @@
 <?php
 namespace App\View\Components;
 use Illuminate\View\Component;
-class MenuItem extends Component
+class Pointer extends Component
 {
     public $sub;
     public $href;

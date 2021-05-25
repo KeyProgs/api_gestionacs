@@ -83,7 +83,7 @@
 
                                 <div class="col-md-6">
                                     <label for="nom">Nom</label>
-                                    <input required type="date" class=" form-control form-control-sm" name="nom"
+                                    <input required type="text" class=" form-control form-control-sm" name="nom"
                                            id="nom"
                                            value="{{$client['nom']}}">
                                 </div>
@@ -238,14 +238,14 @@
                                 <div class="card">
                                     <div class="card-header" id="headingTwo">
                                         <h5 class="mb-0">
-                                            <button type='button' class="btn btn-link collapsed" data-toggle="collapse"
+                                            <button type='button' class="btn btn-link" data-toggle="collapse"
                                                     data-target="#collapseTwo" aria-expanded="false"
                                                     aria-controls="collapseTwo">
                                                 <img width="50px" src="/img/sante.png"> Santé
                                             </button>
                                         </h5>
                                     </div>
-                                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                          data-parent="#accordion">
                                         <div class="card-body">
 
@@ -258,7 +258,7 @@
                                 <div class="card">
                                     <div class="card-header" id="headingThree">
                                         <h5 class="mb-0">
-                                            <button type='button' class="btn btn-link collapsed" data-toggle="collapse"
+                                            <button type='button' class="btn btn-link" data-toggle="collapse"
                                                     data-target="#collapseThree" aria-expanded="false"
                                                     aria-controls="collapseThree">
                                                 <img width="50px" src="/img/habitation.png"> Habitation
@@ -268,15 +268,26 @@
                                     <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                          data-parent="#accordion">
                                         <div class="card-body">
-                                            Détail Tarification Habitation Détail Tarification Habitation Détail
-                                            Tarification Habitation Détail Tarification Habitation Détail Tarification
-                                            Habitation Détail Tarification Habitation Détail Tarification Habitation
-                                            Détail Tarification Habitation Détail Tarification Habitation Détail
-                                            Tarification Habitation Détail Tarification Habitation Détail Tarification
-                                            Habitation Détail Tarification Habitation Détail Tarification Habitation
-                                            Détail Tarification Habitation Détail Tarification Habitation Détail
-                                            Tarification Habitation Détail Tarification Habitation Détail Tarification
-                                            Habitation Détail Tarification Habitation
+                                            Habitation
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingFor">
+                                        <h5 class="mb-0">
+                                            <button type='button' class="btn btn-link collapsed" data-toggle="collapse"
+                                                    data-target="#collapseFor" aria-expanded="false"
+                                                    aria-controls="collapseFor">
+                                                <img width="50px" src="/img/habitation.png"> Affaires et Documents
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFor" class="collapse show" aria-labelledby="headingFor"
+                                         data-parent="#accordion">
+                                        <div class="card-body">
+
+                                            <x-client-files  :clientId="$client->id" />
+
                                         </div>
                                     </div>
                                 </div>

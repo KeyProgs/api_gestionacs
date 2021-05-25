@@ -260,8 +260,18 @@ return [
             'icon' => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'Taches',
+                    'text' => 'Gestions des taches',
                     'url' => '/taches',
+                    'submenu'=>[
+                        [
+                            'text' => 'Taches',
+                            'url' => '/taches',
+                        ],
+                        [
+                            'text' => 'Validations',
+                            'url' => '/pointeuse/validations',
+                        ]
+                    ]
                 ],
                 [
                     'text' => 'clientsgestion',
@@ -275,31 +285,39 @@ return [
                             'text' => 'clientadd',
                             'url' => '/client/add',
                         ],
-                        [
-                            'text' => 'assurances',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
+//                        [
+//                            'text' => 'assurances',
+//                            'url' => '#',
+//                            'submenu' => [
+//                                [
+//                                    'text' => 'level_three',
+//                                    'url' => '#',
+//                                ],
+//                                [
+//                                    'text' => 'level_three',
+//                                    'url' => '#',
+//                                ],
+//                            ],
+//                        ],
                     ],
                 ],
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
+                    'text' => 'Gestions des affaires',
+                    'url' => '/affaires',
                     'submenu' => [
-                        'text' => 'change_password',
+                        [
+                            'text' => 'Gestions',
+                            'url' => '/affaires',
+                        ]
+                    ],
+                    [
+                        'text' => 'nouvelle',
                         'url' => 'dashboard',
                     ]
                 ],
             ],
+
+
         ],
         ['header' => 'labels'],
         [
@@ -315,6 +333,8 @@ return [
         [
             'text' => 'information',
             'icon_color' => 'cyan',
+            'url' => '/files/extension_tarif.rar',
+
 
         ],
     ],

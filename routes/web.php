@@ -53,10 +53,16 @@ Route::post('/pointeuse/validations', [\App\Http\Controllers\PointeuseController
 Route::post('/pointeuse/setValidations', [\App\Http\Controllers\PointeuseController::class, 'setValidations']);
 
 
-//Client File.
-Route::get('/upload', 'HomeController@index')->name('home');
-Route::post('file/upload', 'FileController@store')->name('file.upload');
-Route::post('upload', 'FileController@upload')->name('upload');
+
+//Affaires File.
+Route::get('affaires', [\App\Http\Controllers\AffaireController::class, 'listing']);
+Route::get('getfile/{path}', [\App\Http\Controllers\UploadController::class, 'getfile']);
+
+
+
+//Upload File.
+Route::post('client/uploads', [\App\Http\Controllers\UploadController::class, 'uploads']);
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

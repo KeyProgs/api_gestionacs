@@ -63,9 +63,9 @@ class User extends Authenticatable
            return $this->hasMany(File::class);
     }
 
-    public function uploads()
+    public function affaires()
     {
-        return $this->hasMany(Upload::class);
+        return $this->hasMany(Affaire::class)->get();
     }
 
     public function lastPointeuse(){
