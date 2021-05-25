@@ -16,7 +16,7 @@ class pointeuse extends Model
     public function getLastPointeuse()
     {
 
-        return $this->latest()->first();
+        return $this->where('user_id',$this->user_id)->latest()->first();
     }
 
     public function dayHours()

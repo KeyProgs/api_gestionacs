@@ -23,18 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa062a6e-ab0b-4276-846c-9002408f76e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/components/pointeuse.blade.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/js.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/logo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PointeuseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PointeuseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/pointeuse/pointeuse.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/pointeuse/pointeuse.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/users/pointeuse/validations.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users/pointeuse/validations.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item-dropdown-user-menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/partials/navbar/menu-item-dropdown-user-menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/pointeuse.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/pointeuse.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" afterDir="false" />
@@ -289,7 +282,7 @@
       <workItem from="1621785488574" duration="30117000" />
       <workItem from="1621850445474" duration="13939000" />
       <workItem from="1621937323658" duration="5804000" />
-      <workItem from="1621953307367" duration="5146000" />
+      <workItem from="1621953307367" duration="5907000" />
     </task>
     <servers />
   </component>
