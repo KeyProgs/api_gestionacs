@@ -80,7 +80,8 @@
                 {{ csrf_field() }}
             </form>
 
-            @include('users.pointeuse.pointeuse')
+{{--            @include('users.pointeuse.pointeuse')--}}
+            <x-pointer />
 
         </li>
 

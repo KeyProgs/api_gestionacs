@@ -24,19 +24,21 @@
             @csrf
 
 
-            <select name="user" id="user" onchange="document.getElementById('validations_form').submit();">
+            <select class="form-control col-md-4" name="user" id="user" onchange="document.getElementById('validations_form').submit();">
                 <option>Membres d equipe</option>
                 @foreach($users as $user)
                     <option @if($user_id==$user->id) selected @endif value="{{$user->id}}">{{$user->name}}</option>
                 @endforeach
             </select>
-            <select name="mois" id="mois" onchange="document.getElementById('validations_form').submit();">
+            <select class="form-control col-md-4" name="mois" id="mois" onchange="document.getElementById('validations_form').submit();">
                 @php $mois_id<1? $mois_id=date('m'):0  @endphp
                 @for($mois=1 ; $mois<13;$mois++)
                     <option @if($mois_id==$mois) selected @endif value="{{$mois}}">mois {{$mois}}</option>
                 @endfor
 
             </select>
+            
+
 
         </form>
         @if($user_id)

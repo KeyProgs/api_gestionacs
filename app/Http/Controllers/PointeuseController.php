@@ -65,6 +65,7 @@ class PointeuseController extends Controller
         $pointeuse->user_id = Auth::user()->id;
         echo 'hoo';
         return $pointeuse->save() ? true : false;
+
     }
 
     /**

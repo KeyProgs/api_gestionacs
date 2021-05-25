@@ -23,6 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+//        Blade::component('pointer', Pointer::class);
     }
 }
