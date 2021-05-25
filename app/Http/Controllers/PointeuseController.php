@@ -30,14 +30,26 @@ class PointeuseController extends Controller
     public function setValidations(Request $request){
 
         for($day=1;$day<32;$day++){
-            echo "$day ".$request->input('mois')." //".$request->input('dayValideHours_'.$day)." 000<br>";
+//            echo "$day ".$request->input('mois')." //".$request->input('dayValideHours_'.$day)." 000<br>";
             $data = DB::table('pointeuses')
                 ->whereDay('created_at', $day)
                 ->whereMonth('created_at', $request->input('mois'))
-                ->update(['heuresvalides' =>$request->input('dayValideHours_'.$day)]);
-
+                ->update([
+                    'heuresvalides' =>$request->input('dayValideHours_'.$day),
+                    'note' =>$request->input('note_'.$day)
+                ]);
 
         }
+        $mois = $request->input('mois');
+        $user_id = $request->input('user');
+        $pointeuses = pointeuse::where('user_id', $user_id)
+            ->whereMonth('created_at', $mois)
+            ->get();
+        $users=User ::all();
+        $pointer=new pointeuse();
+//        dd($pointeuses);
+        return view('users.pointeuse.validations',['pointeuses'=>$pointeuses,'users'=>$users,'user_id'=>$user_id,'mois_id'=>$mois,'pointer'=>$pointer]);
+
     }
 
     /**

@@ -66,3 +66,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 
 
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('view:clear');
+    return "Cache is cleared";
+});

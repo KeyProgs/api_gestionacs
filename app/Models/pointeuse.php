@@ -30,24 +30,40 @@ class pointeuse extends Model
             ->whereDay('created_at', $dayPointeuse)
             ->get();
 
+        $total=new DateTime('00:00');
+        $total_bkp = clone $total;
+
         foreach ($dayPointeuses as $dayPointeuse) {
 
+            //if enter action made 1   Keep $hourIn
             if ($dayPointeuse->action == 1)
                 $hourIn = new DateTime($dayPointeuse->created_at);
 
-
+            //if Out action made 0   Make diference frome last $hourIn
             if ($dayPointeuse->action == 0) {
 
                 $hourOut = new DateTime($dayPointeuse->created_at);
 
+                //if not first Pointage in DB
                 if ($hourIn <> null) {
                     $diff = $hourOut->diff($hourIn);
+                    $diff = $hourIn->diff($hourOut);
 
                     $block = [];
                     $block['hourIn'] = $hourIn->format('H:i:s');
-                    $block['hourOut'] = $hourIn->format('H:i:s');
+                    $block['hourOut'] = $hourOut->format('H:i:s');
                     $block['diff'] = $diff->format('%h hr, %i min  %s');
-                    $block['diff'] = $diff->format('%h hr, %i min  %s');
+
+
+                    $total=$total->add($diff);
+//                    dd($total->diff($total_bkp)->format('%h hr, %i min  %s'));
+
+//                    echo "add  total diff".$total->format('H:i:s') . " + " . $diff->format('%H:%i:%s') .'<br>';
+                    $block['total'] = $total->diff($total_bkp)->format('%h hr, %i min  %s');
+
+
+
+
 
                     $blocks[] = $block;
                 } else {
@@ -63,35 +79,37 @@ class pointeuse extends Model
 
 
         }
+//echo($total->format('h:i:s'));
+        $total=new DateTime('00:00');
         return $blocks;
     }
 
     public function dayHoursAuto($dayPointeuse)
     {
-//        $dayPointeuse = date('d', strtotime($this->created_at));
+        $dayPointeuses = $this::where('user_id', $this->user_id)
+            ->whereDay('created_at', $dayPointeuse  )
+            ->get();
 
+        $total=new DateTime('00:00');
+        $total_bkp = clone $total;
+        foreach ($dayPointeuses as $dayPointeuse) {
+            //if enter action made 1   Keep $hourIn
+            if ($dayPointeuse->action == 1)
+                $hourIn = new DateTime($dayPointeuse->created_at);
 
-        $firstLogin = $this::where('user_id', $this->user_id)
-            ->whereDay('created_at', $dayPointeuse)
-            ->first();
-        if (($firstLogin) == null) return '0';
-        $firstLogin = new Carbon($firstLogin->created_at);
-        $firstLogin = $firstLogin->toDateTimeString();
-        $firstLogin = new DateTime($firstLogin);
+            //if Out action made 0   Make diference frome last $hourIn
+            if ($dayPointeuse->action == 0) {
+                $hourOut = new DateTime($dayPointeuse->created_at);
+                //if not first Pointage in DB
+                if ($hourIn <> null) {
+                    $diff = $hourOut->diff($hourIn);
+                    $diff = $hourIn->diff($hourOut);
+                    $total=$total->add($diff);
+                }
+            }
+        }
 
-
-        $lastLogin = $this::where('user_id', $this->user_id)
-            ->whereDay('created_at', $dayPointeuse)
-            ->latest()->first();
-        if (($lastLogin) == null) return '0';
-        $lastLogin = new Carbon($lastLogin->created_at);
-        $lastLogin = $lastLogin->toDateTimeString();
-        $lastLogin = new DateTime($lastLogin);
-
-        $diff = $lastLogin->diff($firstLogin);
-//        dd($diff->format('%h hr, %i min  %s'));
-        return $diff->format('%h hr, %i min  %s');
-
+        return $total->diff($total_bkp)->format('%h hr, %i min  %s');
 
     }
 
@@ -104,6 +122,15 @@ class pointeuse extends Model
         return $pointeuses <>null ? $pointeuses->heuresvalides : 0;
     }
 
+    public function getNote($dayPointeuse)
+    {
+
+        $pointeuses = $this::where('user_id', $this->user_id)
+            ->whereDay('created_at', $dayPointeuse)
+            ->first();
+        return $pointeuses <>null ? $pointeuses->note : '//';
+    }
+
     public function getUserPointeusesByMonth($user_id, $mois)
     {
         return $this::where('user_id', $user_id)
@@ -111,13 +138,13 @@ class pointeuse extends Model
             ->get();
     }
 
-    public function actions($monthPointeuse,$dayPointeuse){
+    public function actions($monthPointeuse,$dayPointeuse,$user_id){
         $actions= DB::table('actions')
             ->whereDay('dd', $dayPointeuse)
             ->whereMonth('df', $monthPointeuse)
             ->whereDay('dd', $dayPointeuse)
             ->whereMonth('df', $monthPointeuse)
-            ->where('responsable', Auth::user()->id)
+            ->where('responsable', $user_id)
             ->get();
 
 //        dd($actions);

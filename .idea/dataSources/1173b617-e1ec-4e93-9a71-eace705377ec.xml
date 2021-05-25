@@ -1653,7 +1653,7 @@ tokenable_id</ColNames>
     </column>
     <column id="425" parent="298" name="heuresvalides">
       <Position>4</Position>
-      <DataType>int|0s</DataType>
+      <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
