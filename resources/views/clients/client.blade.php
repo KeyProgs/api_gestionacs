@@ -20,7 +20,7 @@
 
         {{--        <button class="btn btn-app"><a  href="">Ajouter Client</a></button>--}}
         <form id="client_form" class="row  form-row col-md-12 row justify-content-between"
-              action="/client/{{isset($client['id']) ? "edit" : "add"}}/{{$client['id']}}" method="POST">
+              action="/client/{{isset($client['id']) ? "edit/$client[id]" : "add"}}" method="POST">
             @csrf
 
 
