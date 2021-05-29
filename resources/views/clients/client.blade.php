@@ -43,7 +43,7 @@
 
             <table class="col-md-12">
                 <tr>
-                    <td>
+                    <td  style="vertical-align:top">
                         <div class="p-3 mb-2 bg-gradient-light  row   form-row col-md-12 rounded-lg">
 
                             <div id="headingClient" data-toggle="collapse" style="cursor: pointer;"
