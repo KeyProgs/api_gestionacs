@@ -26,18 +26,12 @@
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/js.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/eurodommages/logo.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../extension_tarif/dist/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1173b617-e1ec-4e93-9a71-eace705377ec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1173b617-e1ec-4e93-9a71-eace705377ec.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/ClientFiles.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/ClientFiles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/Pointer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/View/Components/Pointer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/adminlte.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/adminlte.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/affaires/affaires.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/affaires/affaires.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/clients/client.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/clients/client.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UploadController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/client-files.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/client-files.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" beforeDir="false" afterPath="$PROJECT_DIR$/../extension_tarif/compagnies/netvox/js.js" afterDir="false" />
@@ -217,19 +211,21 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/components" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/api_gestionacs" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api_gestionacs" />
       <recent name="$PROJECT_DIR$/resources/views/components" />
       <recent name="D:\dev\web\api_gestionacs_v3\resources\views\clients\actions" />
       <recent name="D:\dev\web\api_gestionacs_v3\resources\views\clients\voitures\infractions" />
       <recent name="D:\dev\web\extension_tarif\compagnies\eurodommages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/storage/app/public" />
       <recent name="D:\dev\web\api_gestionacs_v3\public" />
       <recent name="D:\dev\web\api_gestionacs_v3\files" />
@@ -293,7 +289,9 @@
       <workItem from="1621785488574" duration="30117000" />
       <workItem from="1621850445474" duration="13939000" />
       <workItem from="1621937323658" duration="5804000" />
-      <workItem from="1621953307367" duration="27150000" />
+      <workItem from="1621953307367" duration="41274000" />
+      <workItem from="1622217104948" duration="809000" />
+      <workItem from="1622303969142" duration="650000" />
     </task>
     <servers />
   </component>

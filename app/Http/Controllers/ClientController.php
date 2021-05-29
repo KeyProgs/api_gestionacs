@@ -210,6 +210,8 @@ class ClientController extends Controller
 
     public function clientAddForm(Request $request)
     {
+        //TODO check Security issues valiations
+        //
         if ($request->isMethod('post')) {
             $dataFormClient = $request->all();
             $columns = Schema::getColumnListing('clients');
@@ -223,6 +225,9 @@ class ClientController extends Controller
 //        dd($client);
 
 
+            //TODO check if Auto Submit
+            //TODO Sante if Auto Submit
+            //TODO Habitation    if Auto Submit
             $columns = Schema::getColumnListing('voitures');
             $voiture = new Voiture();
             foreach ($columns as $key => $column)
@@ -383,3 +388,4 @@ class ClientController extends Controller
         //
     }
 }
+//TODO first Action Pointeuse

@@ -33,7 +33,7 @@
             <input class=" form-control form-control-sm" type="file" name="fileToUpload" id="fileToUpload">
             <input type="text" name="titre" id="titre">
             <input type="hidden" name="client_id" id="client_id" value="{{$clientId}}">
-            <input type="hidden" name="affaire_id" id="affaire_id" value="{{$clientId}}">
+            <input type="hidden" name="affaire_id" id="affaire_id" value="1">
             <input class="btn btn-primary" type="submit" value="Importer Document" name="Envoyer"/>
         </form>
     </div>
