@@ -1,3 +1,5 @@
+.idea/*
+
 /node_modules
 /public/hot
 /public/storage
@@ -18,5 +20,5 @@ yarn-error.log
 
 
 
-.idea/webServers.xml
-.idea/workspace.xml
+
+
