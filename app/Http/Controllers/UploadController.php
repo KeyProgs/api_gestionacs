@@ -11,6 +11,7 @@ class UploadController extends Controller
 {
     public function getfile($path){
         $file=Storage::disk('public')->get('crmdocs/'.$path);
+        return Storage::download('public/crmdocs/'.$path);
 
         return (new Response($file, 200))->header('Content-Type', 'application/pdf');
     }
