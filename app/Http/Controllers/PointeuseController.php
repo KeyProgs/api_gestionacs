@@ -38,7 +38,6 @@ class PointeuseController extends Controller
                     'heuresvalides' =>$request->input('dayValideHours_'.$day),
                     'note' =>$request->input('note_'.$day)
                 ]);
-
         }
         $mois = $request->input('mois');
         $user_id = $request->input('user');

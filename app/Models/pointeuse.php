@@ -21,31 +21,28 @@ class pointeuse extends Model
 
     public function dayHours()
     {
-        $dayPointeuse = date('d', strtotime($this->created_at));
         $blocks = [];
         $hourIn = null;
 
 
         $dayPointeuses = $this::where('user_id', $this->user_id)
-            ->whereDay('created_at', $dayPointeuse)
+            ->whereDay('created_at', date('d', strtotime($this->created_at)))
+            ->orderBy('created_at', 'ASC')
             ->get();
 
         $total=new DateTime('00:00');
         $total_bkp = clone $total;
 
         foreach ($dayPointeuses as $dayPointeuse) {
-
             //if enter action made 1   Keep $hourIn
             if ($dayPointeuse->action == 1)
                 $hourIn = new DateTime($dayPointeuse->created_at);
-
-            //if Out action made 0   Make diference frome last $hourIn
-            if ($dayPointeuse->action == 0) {
-
+            else{
+                //if Out action made 0   Make diference frome last $hourIn
                 $hourOut = new DateTime($dayPointeuse->created_at);
+                //if not first Pointage in DB and $hourIn is ine preveous  foreach
+                if ($hourIn!=NULL) {
 
-                //if not first Pointage in DB
-                if ($hourIn <> null) {
                     $diff = $hourOut->diff($hourIn);
                     $diff = $hourIn->diff($hourOut);
 
@@ -63,10 +60,10 @@ class pointeuse extends Model
 
 
 
-
-
                     $blocks[] = $block;
+                    $hourIn=NULL;
                 } else {
+                    echo ("hourIn is null and out ".$hourOut->format("%h %i %s"));
                     $block = [];
                     $block['hourIn'] = 'introuvable';
                     $block['hourOut'] = $hourIn;
@@ -88,7 +85,9 @@ class pointeuse extends Model
     {
         $dayPointeuses = $this::where('user_id', $this->user_id)
             ->whereDay('created_at', $dayPointeuse  )
+            ->orderBy('created_at', 'ASC')
             ->get();
+        $hourIn=null;
 
         $total=new DateTime('00:00');
         $total_bkp = clone $total;
@@ -98,10 +97,11 @@ class pointeuse extends Model
                 $hourIn = new DateTime($dayPointeuse->created_at);
 
             //if Out action made 0   Make diference frome last $hourIn
-            if ($dayPointeuse->action == 0) {
+            else{
                 $hourOut = new DateTime($dayPointeuse->created_at);
                 //if not first Pointage in DB
-                if ($hourIn <> null) {
+                if ($hourIn!=NULL) {
+
                     $diff = $hourOut->diff($hourIn);
                     $diff = $hourIn->diff($hourOut);
                     $total=$total->add($diff);
