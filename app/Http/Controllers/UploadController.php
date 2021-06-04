@@ -94,7 +94,6 @@ class UploadController extends Controller
         $affaire_id=$request->input('affaire_id');
         $path = $request->file('fileToUpload')->storeAs('public/crmdocs',$client_id.'_'.request()->file('fileToUpload')->getClientOriginalName());
 
-        $path =explode('/',$path);
         $upload = new Upload();
         $upload->titre=$request->input('titre');
         $upload->client_id=$client_id;
