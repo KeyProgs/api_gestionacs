@@ -10,7 +10,7 @@
             <tr class="thead-dark " style="text-align: left">
 
                 <td colspan="2">
-                    <a href="../../getfile/{{$upload->path}}">
+                    <a href="../../getfile/{{$upload->id}}">
                     <span class="fa fa-download">
 
                         {{$upload->titre}}

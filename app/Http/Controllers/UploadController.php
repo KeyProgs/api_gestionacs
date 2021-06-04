@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Upload;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
 class UploadController extends Controller
 {
-    public function getfile($path){
-        $file=Storage::disk('public')->get('crmdocs/'.$path);
+    public function getfile($pathId=null){
+
+        $path=Upload::find($pathId)->path;
+//        $file=Storage::disk('public')->get($path);
         return Storage::download($path);
 
         return (new Response($file, 200))->header('Content-Type', 'application/pdf');
