@@ -99,7 +99,7 @@ class UploadController extends Controller
         $upload->titre=$request->input('titre');
         $upload->client_id=$client_id;
         $upload->affaire_id=$affaire_id;
-        $upload->path=$path[sizeof($path)-1];
+        $upload->path=$path;
         $upload->save();
 
         return redirect('/client/c-'.$request->input('client_id'));
