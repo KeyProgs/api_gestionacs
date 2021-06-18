@@ -278,6 +278,25 @@
                                             <button type='button' class="btn btn-link collapsed" data-toggle="collapse"
                                                     data-target="#collapseFor" aria-expanded="false"
                                                     aria-controls="collapseFor">
+                                                <img width="50px" src="/img/habitation.png"> CGM
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFor" class="collapse show" aria-labelledby="headingFor"
+                                         data-parent="#accordion">
+                                        <div class="card-body">
+
+                                            <x-cgm :clientId="$client->id"  />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingFor">
+                                        <h5 class="mb-0">
+                                            <button type='button' class="btn btn-link collapsed" data-toggle="collapse"
+                                                    data-target="#collapseFor" aria-expanded="false"
+                                                    aria-controls="collapseFor">
                                                 <img width="50px" src="/img/habitation.png"> Affaires et Documents
                                             </button>
                                         </h5>

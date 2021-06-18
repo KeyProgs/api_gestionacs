@@ -37,6 +37,8 @@ class PointeuseController extends Controller
                 ->update([
                     'heuresvalides' =>$request->input('dayValideHours_'.$day),
                     'note' =>$request->input('note_'.$day)
+                    //TODO: note not updated
+
                 ]);
         }
         $mois = $request->input('mois');
