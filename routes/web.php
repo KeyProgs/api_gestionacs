@@ -52,6 +52,7 @@ Route::post('/change_reponsable', [ClientController::class, 'changeReponsable'])
 
 //Contrat Routes.
 Route::post('/contrats/create', [\App\Http\Controllers\ContratController::class, 'create']);
+Route::get('contrats/get{id}', [\App\Http\Controllers\ContratController::class, 'show']);
 
 
 //Pointeuse Routes.

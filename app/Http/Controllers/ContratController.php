@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contrat;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use phpDocumentor\Reflection\Types\This;
 
 class ContratController extends Controller
 {
@@ -66,9 +69,21 @@ class ContratController extends Controller
      * @param  \App\Models\Contrat  $contrat
      * @return \Illuminate\Http\Response
      */
-    public function show(Contrat $contrat)
+    public function show($id)
     {
-        //
+        $contrat=Contrat::find($id);
+//        dd($contrat->client->id);
+        return view('clients.contrats.mensuel_',['contrat'=>$contrat]);
+
+        $pdf = PDF::loadView('clients.contrats.mensuel_', $contat);
+        return $pdf->stream('contrat.pdf');
+
+
+
+        $pdf = App::make('dompdf.wrapper');
+//        return($contat->CONTRACT);
+        $pdf->loadHTML($contat->CONTRACT);
+        return $pdf->stream();
     }
 
     /**

@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Contrat extends Model
 {
     use HasFactory;
+
+    public function client(){
+//        dd($this->belongsTo(Client::class));
+        return $this->belongsTo(Client::class);
+    }
 }
