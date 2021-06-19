@@ -32,6 +32,7 @@
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" onclick="document.getElementById('client_form').submit();" href="#">Enregistrer </a>
+                        <a class="dropdown-item" href="/client/delete/{{$client->id}}">Suprimer la fiche client</a>
                         <a class="dropdown-item" href="/client/add">Ajouter Un client</a>
                         <a class="dropdown-item" href="#">Historique Client</a>
                         <a class="dropdown-item" href="#">-----------------</a>

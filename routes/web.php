@@ -27,12 +27,15 @@ Route::get('/test', function () {
     return view('home');
 });
 
-Route::get('/clientslist', [ClientController::class, 'getClients'])->middleware('auth');
+Route::get('/clientslist', [ClientController::class, 'getClients'])->middleware('auth')->name('clientslist');
 Route::get('/client/c-{id}', [ClientController::class, 'getClient']);
 //Route::get('/client/add', [\App\Http\Controllers\ClientController::class , 'clientAddForm']);
 //Route::get('/client/add/', [\App\Http\Controllers\ClientController::class , 'clientAddForm']);
 Route::match(array('GET', 'POST'), '/client/add/', [ClientController::class, 'clientAddForm']);
 Route::post('/client/edit/{id}', [ClientController::class, 'edit_client']);
+Route::get('/client/delete/{id}', [ClientController::class, 'delete']);
+
+
 
 Route::get('/client/sinistre/delete/{id}', [ClientController::class, 'deleteSinistre']);
 Route::get('/client/sanction/delete/{id}', [ClientController::class, 'deleteSanction']);

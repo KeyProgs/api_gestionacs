@@ -8,6 +8,14 @@
 @stop
 
 @section('content')
+    @if(session()->has('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ session()->get('success') }}</strong>
+        </div>
+
+    @endif
+
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -24,6 +32,7 @@
                                <th  scope="col" >Cp</th>
                                <th  scope="col" >Date Naissance</th>
                                <th  scope="col" >Utilisateur</th>
+                               <th  scope="col" >Actions</th>
                            </tr>
                         </thead>
                          <tbody>
@@ -37,6 +46,14 @@
                                      <td>{{$client['cp']}}</td>
                                      <td>{{$client['dn']}}</td>
                                      <td>{{$client->user->name}}</td>
+                                     <td>
+                                         <a href="{{url('client/delete/'.$client->id)}}" onclick="return confirm('Vous etes sure de vouloir suprimer ?')" >
+                                             <span class="badge badge-pill badge-danger">Suprimer</span>
+                                         </a>
+                                         <a href=""><span class="badge badge-pill badge-primary">Modifier</span></a>
+
+
+                                     </td>
                                  </tr>
                                  @endforeach
 
