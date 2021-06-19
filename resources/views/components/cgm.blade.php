@@ -27,7 +27,7 @@
                 <form method="POST" action="{{url('contrats/create')}}">
                     @csrf
                     <input required type="hidden" class=" form-control form-control-sm" name="client_id" id="compagnie"
-                           placeholder="Compagnie">
+                           placeholder="Compagnie" value="{{$clientId}}">
 
                     <div class="col-md-6">
                         <label for="nom">Type Contrat</label>

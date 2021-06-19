@@ -97,9 +97,7 @@ class ClientController extends Controller
     public function delete($id){
         $client=Client::find($id);
         Session::flash('success', "Client  $client->nom $client->prenom  suprime avec success.");
-
         $client->delete();
-
         return redirect()->route('clientslist');
     }
 
