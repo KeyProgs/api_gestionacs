@@ -23,7 +23,7 @@
                     <p class="mb-0"><h1>Liste Des clients</h1>
 
                     <table class="table table-hover">
-                        <thead  class="thead-light ">
+                        <thead  class="thead-light">
                            <tr>
                                <th  scope="col" >#</th>
                                <th  scope="col" >Nom</th>
