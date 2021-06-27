@@ -20,6 +20,7 @@ return [
     'adresse' => env('ADRESSE', '105 rue d\'Inguimbert84200 carpentras'),
     'telephone' => env('TELEPHONE', '09 52 92 79 30...'),
     'desc' => env('TELEPHONE', 'Assurance courtage sérénité siège social 25 boulevard omer Sarrault 11000 Carcassonne capital de 65 000,00€. Rcs de Carcassonne N° 799031182.Orias 14000663'),
+    'orias' => env('ORIAS', '14000663'),
 
     /*
     |--------------------------------------------------------------------------

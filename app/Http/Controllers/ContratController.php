@@ -75,7 +75,7 @@ class ContratController extends Controller
 //        dd($contrat->client->id);
 //        return($contrat->CONTRACT);
 
-        return view('clients.contrats.mensuel_',['contrat'=>$contrat]);
+        return view('clients.contrats.mensuel',['contrat'=>$contrat]);
 
         $pdf = PDF::loadView('clients.contrats.mensuel_', $contat);
         return $pdf->stream('contrat.pdf');

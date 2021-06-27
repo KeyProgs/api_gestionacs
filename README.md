@@ -1,3 +1,26 @@
+Changing the migration length to 191
+Changing the length to 191 or less.
+
+$table->string('name', 191);
+
+This may not be the ideal one, but if you don't care about utf8mb4 you can go to your config/database.php file and replace charset and collation to utf8
+
+'charset' => 'utf8mb4',
+'collation' => 'utf8mb4_unicode_ci',
+to
+
+'charset' => 'utf8',
+'collation' => 'utf8_unicode_ci',
+
+
+
+
+php artisan tinker
+DB::table('users')->insert(['name'=>'MyUsername','email'=>'thisis@myemail.com','password'=>Hash::make('123456')])
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
